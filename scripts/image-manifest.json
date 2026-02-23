@@ -1,0 +1,70 @@
+{
+  "branding": {
+    "logo": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/image-1.png",
+    "payment-visa": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/visa.png",
+    "payment-mastercard": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/mastercard.png",
+    "payment-amex": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/american-express.png"
+  },
+  "hero": {
+    "hero-bg": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/hero-bg.webp"
+  },
+  "car-types": {
+    "sports": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/sports-car-rental.svg",
+    "convertible": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/convertible-1.svg",
+    "luxury": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/rolls-royce.png",
+    "suv": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/suv-car-rental.svg",
+    "electric": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/electric-car-rental-1.svg"
+  },
+  "brands": {
+    "bmw": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/bmw.png",
+    "range-rover": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/land.png",
+    "mercedes": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/merc.png",
+    "cadillac": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/cadillas-1.png",
+    "ferrari": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/ferri.png",
+    "lamborghini": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/lam.png",
+    "maserati": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/05/logo-maserati-white.png",
+    "porsche": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/porsche-logo-2.png",
+    "aston-martin": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/aston_martin.png",
+    "audi": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/audi-1-1-1.png",
+    "bentley": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/bentlay.png",
+    "rolls-royce": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/royce.png",
+    "bugatti": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/bugatti.png",
+    "mclaren": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/05/McLaren-logo-white.svg"
+  },
+  "cars": {
+    "lamborghini-huracan-sto-orange": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/10/Lamborghini-Huracan-STO-orange-2025-scaled.jpg",
+    "lamborghini-revuelto": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/08/DSCF9336-scaled.jpg",
+    "lamborghini-huracan-tecnica": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/04/Lamborghini-Huracan-Tecnica-scaled.webp",
+    "mclaren-750s-spyder": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/04/Mclaren-750S-Spyder-1-scaled.jpg",
+    "rolls-royce-dawn-white": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/rolls-royce-dawn-white-1.jpeg",
+    "rolls-royce-dawn-black": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Rolls-Royce-Dawn-2021-black-1.webp",
+    "porsche-911-turbo-s": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/11/Porsche-911-Turbo-S-0.jpg",
+    "porsche-911-carerra-s-spyder": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Porsche-911-Carerra-S-Spyder-0.jpeg",
+    "mercedes-amg-g63-matte-gray": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/03/Mercedes-AMG-G63-Matte-Gray-1.jpeg",
+    "lamborghini-huracan-sto": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Lamborghini-Huracan-STO-7.webp",
+    "mercedes-gls600-maybach": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Mercedes-GLS600-Maybach-5.jpeg",
+    "bmw-x6-m-competition-red": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/BMW-X6-M-Competition-2022-red-7.webp",
+    "mercedes-g63-amg-white": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Mercedes-Benz-G63-AMG-2021-white-5.jpeg",
+    "bentley-bentayga-brown": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/bentley-bentayga-2022-brown-1.jpg",
+    "mercedes-g63-amg-black": "https://luxurysupercarsdubai.com/wp-content/uploads/2024/12/Mercedes-Benz-G63-AMG-2021-black-5.webp"
+  },
+  "about": {
+    "showroom": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/showroom.webp"
+  },
+  "avatars": {
+    "user-dummy": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/01/user-dummy-img.png"
+  },
+  "instagram": {
+    "post-1": "https://luxurysupercarsdubai.com/wp-content/uploads/sb-instagram-feed-images/640260984_1385154270081181_2026277557293045675_nlow.webp",
+    "post-2": "https://luxurysupercarsdubai.com/wp-content/uploads/sb-instagram-feed-images/628640445_929714446296963_3822659961249897165_nlow.webp",
+    "post-3": "https://luxurysupercarsdubai.com/wp-content/uploads/sb-instagram-feed-images/635154026_896521726318180_3145520479177214836_nlow.webp",
+    "post-4": "https://luxurysupercarsdubai.com/wp-content/uploads/sb-instagram-feed-images/628778716_2009708989928279_9006743159280491789_nlow.webp",
+    "post-5": "https://luxurysupercarsdubai.com/wp-content/uploads/sb-instagram-feed-images/629398878_1215051420832270_6189204580309050526_nlow.webp"
+  },
+  "blog": {
+    "supercar-makes-sense": "https://luxurysupercarsdubai.com/wp-content/uploads/2026/01/supercar-makes-sense.webp",
+    "choosing-right-supercar": "https://luxurysupercarsdubai.com/wp-content/uploads/2026/01/choosing-right-supercar.webp",
+    "kickstart-your-year": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/12/kickstart-your-year.webp",
+    "december-best-month": "https://luxurysupercarsdubai.com/wp-content/uploads/2025/12/december-best-month.webp"
+  }
+}
