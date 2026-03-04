@@ -1,14 +1,7 @@
 import { Mail, MapPin } from "lucide-react"
 import { PhoneIcon } from "@/components/icons/phone-icon"
+import { ContactIconCircle } from "./contact-icon-circle"
 import { contactData } from "../_lib/contact-data"
-
-function ContactIconCircle({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-500/10 text-primary-500">
-      {children}
-    </div>
-  )
-}
 
 function ContactInfoBar() {
   return (

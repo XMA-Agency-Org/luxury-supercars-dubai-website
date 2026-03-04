@@ -31,9 +31,11 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
           {brands.map((brand) => (
             <BrandLogo key={`first-${brand.name}`} brand={brand} />
           ))}
-          {brands.map((brand) => (
-            <BrandLogo key={`second-${brand.name}`} brand={brand} />
-          ))}
+          <div aria-hidden="true" className="contents">
+            {brands.map((brand) => (
+              <BrandLogo key={`second-${brand.name}`} brand={brand} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

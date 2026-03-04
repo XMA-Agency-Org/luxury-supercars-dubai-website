@@ -10,11 +10,17 @@ export type CarSpec = {
 export type CarListing = {
   slug: string
   name: string
+  brand: string
   description: string
   imagePath: string
+  images: string[]
+  year: string
+  color: string
   specs: CarSpec
+  features: string[]
   prices: Record<Currency, number>
   href: string
+  categories: string[]
 }
 
 export type CarCategory = {

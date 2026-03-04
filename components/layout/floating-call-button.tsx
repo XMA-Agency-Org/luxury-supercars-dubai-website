@@ -10,6 +10,7 @@ export function FloatingCallButton() {
   return (
     <a
       href={primaryPhone.href}
+      aria-label={`Call us at ${primaryPhone.label}`}
       className="fixed bottom-6 left-6 z-40 flex items-center gap-2"
     >
       <div className="relative flex items-center">

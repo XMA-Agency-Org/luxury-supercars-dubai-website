@@ -40,6 +40,7 @@ function MobileDropdownSection({
         type="button"
         onClick={() => setIsExpanded((prev) => !prev)}
         className="flex items-center justify-between w-full py-3 text-neutral-50 font-cta font-medium text-lg cursor-pointer"
+        aria-expanded={isExpanded}
       >
         {item.label}
         <svg

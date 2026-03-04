@@ -1,5 +1,4 @@
 import { HeroSection } from "./_components/hero-section"
-import { BookingForm } from "./_components/booking-form"
 import { CarTypeSlider } from "./_components/car-type-slider"
 import { CarCategorySection } from "./_components/car-category-section"
 import { AboutSection } from "./_components/about-section"
@@ -8,8 +7,7 @@ import { DocumentsSection } from "./_components/documents-section"
 import { GoogleReviews } from "./_components/google-reviews"
 import { VideoSection } from "./_components/video-section"
 import { FaqAccordion } from "./_components/faq-accordion"
-import { ContactInfoBar } from "./_components/contact-info-bar"
-import { ContactForm } from "./_components/contact-form"
+import { ContactSection } from "./_components/contact-section"
 import { BlogSection } from "./_components/blog-section"
 import { InstagramFeed } from "./_components/instagram-feed"
 
@@ -27,7 +25,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <BookingForm />
 
       <CarTypeSlider carCategories={carCategories} />
 
@@ -89,12 +86,11 @@ export default function HomePage() {
       <GoogleReviews googleReviews={googleReviews} />
 
       <VideoSection />
-      <FaqAccordion />
-
-      <ContactInfoBar />
-      <ContactForm />
 
       <BlogSection />
+
+      <FaqAccordion />
+      <ContactSection />
       <InstagramFeed />
     </>
   )

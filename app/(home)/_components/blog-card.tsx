@@ -9,15 +9,37 @@ type BlogCardProps = {
 }
 
 function BlogCard({ post, featured = false }: BlogCardProps) {
+  if (featured) {
+    return (
+      <NextLink
+        href={post.href}
+        className="group relative block h-full overflow-hidden rounded-2xl border border-neutral-800"
+      >
+        <Image
+          src={post.thumbnailPath}
+          alt={post.title}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <p className="text-xs font-medium uppercase text-primary-500">
+            {post.date}
+          </p>
+          <h3 className="mt-2 font-heading text-xl font-bold text-neutral-50">
+            {post.title}
+          </h3>
+        </div>
+      </NextLink>
+    )
+  }
+
   return (
     <NextLink
       href={post.href}
-      className={cn(
-        "group block overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 transition-colors hover:border-neutral-700",
-        featured && "h-full"
-      )}
+      className="group flex gap-4 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900 transition-colors hover:border-neutral-700"
     >
-      <div className={cn("relative w-full", featured ? "aspect-[4/3]" : "aspect-video")}>
+      <div className="relative h-28 w-40 shrink-0">
         <Image
           src={post.thumbnailPath}
           alt={post.title}
@@ -25,23 +47,16 @@ function BlogCard({ post, featured = false }: BlogCardProps) {
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <div className="p-5">
+      <div className="flex flex-col justify-center py-3 pr-4">
         <p className="text-xs font-medium uppercase text-primary-500">
           {post.date}
         </p>
-        <h3
-          className={cn(
-            "mt-2 font-heading font-bold text-neutral-50",
-            featured ? "text-xl" : "text-base"
-          )}
-        >
+        <h3 className="mt-1 font-heading text-sm font-bold text-neutral-50 line-clamp-2">
           {post.title}
         </h3>
-        {!featured && (
-          <span className="mt-3 inline-block text-sm text-primary-500 group-hover:underline">
-            Read More
-          </span>
-        )}
+        <span className="mt-2 text-xs text-primary-500 group-hover:underline">
+          Read More
+        </span>
       </div>
     </NextLink>
   )

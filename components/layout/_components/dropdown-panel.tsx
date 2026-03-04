@@ -18,12 +18,13 @@ export function DropdownPanel({ items, isVisible }: DropdownPanelProps) {
           : "opacity-0 -translate-y-2 pointer-events-none"
       )}
     >
-      <div className="bg-neutral-900 rounded-xl border border-neutral-800 shadow-xl shadow-neutral-950/50 p-4 min-w-[480px]">
-        <div className="grid grid-cols-3 gap-2">
+      <div className="bg-neutral-900 rounded-xl border border-neutral-800 shadow-xl shadow-neutral-950/50 p-4 max-w-full min-w-160">
+        <div role="menu" className="grid grid-cols-3 gap-2">
           {items.map((item) => (
             <NextLink
               key={item.href}
               href={item.href}
+              role="menuitem"
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors duration-150 hover:bg-neutral-800"
             >
               {item.iconPath && (

@@ -82,6 +82,7 @@ export function WhatsAppWidget() {
             <button
               onClick={() => setIsOpen(false)}
               className="rounded-full p-1 text-neutral-50 transition-colors hover:bg-success-700"
+              aria-label="Close chat panel"
             >
               <CloseIcon />
             </button>
@@ -117,6 +118,8 @@ export function WhatsAppWidget() {
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="flex h-14 w-14 items-center justify-center rounded-full bg-success-500 text-neutral-50 shadow-lg transition-transform hover:scale-105"
+        aria-expanded={isOpen}
+        aria-label={isOpen ? "Close WhatsApp chat" : "Open WhatsApp chat"}
       >
         {isOpen ? (
           <CloseIcon className="h-6 w-6" />

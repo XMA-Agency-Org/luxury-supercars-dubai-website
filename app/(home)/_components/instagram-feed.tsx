@@ -20,6 +20,7 @@ function InstagramFeed() {
               href={post.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={post.caption}
               className="group relative aspect-square overflow-hidden rounded-xl"
             >
               <Image

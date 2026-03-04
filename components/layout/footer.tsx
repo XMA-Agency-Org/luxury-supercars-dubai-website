@@ -1,20 +1,20 @@
-import NextLink from "next/link"
-import Image from "next/image"
-import { Logo } from "@/components/icons/logo"
-import { contactData } from "@/app/(home)/_lib/contact-data"
-import { PhoneIcon } from "@/components/icons/phone-icon"
-import { LandlineIcon } from "@/components/icons/landline-icon"
-import { EmailIcon } from "@/components/icons/email-icon"
-import { MapPinIcon } from "@/components/icons/map-pin-icon"
+import NextLink from "next/link";
+import Image from "next/image";
+import { Logo } from "@/components/icons/logo";
+import { contactData } from "@/app/(home)/_lib/contact-data";
+import { PhoneIcon } from "@/components/icons/phone-icon";
+import { LandlineIcon } from "@/components/icons/landline-icon";
+import { EmailIcon } from "@/components/icons/email-icon";
+import { MapPinIcon } from "@/components/icons/map-pin-icon";
 import {
   FacebookIcon,
   InstagramIcon,
   YouTubeIcon,
   TikTokIcon,
-} from "@/components/icons/social-icons"
+} from "@/components/icons/social-icons";
 
 const footerDescription =
-  "If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience."
+  "If you are looking to rent the latest luxury Car in Dubai, luxurysupercarsdubai.com is a one-stop destination for all. You can avail the widest range of the most exotic luxury cars, including everything from the latest Sports Cars, Convertible Cars, SUVs, Supercars, and Prestige Cars, all of which would surely provide you with a fascinating experience.";
 
 const footerBrandLinks = [
   { label: "Audi", href: "/brands/rent-audi-dubai" },
@@ -25,7 +25,7 @@ const footerBrandLinks = [
   { label: "Bentley", href: "/brands/rent-bentley-dubai" },
   { label: "Ferrari", href: "/brands/rent-ferrari-dubai" },
   { label: "Porsche", href: "/brands/rent-porsche-dubai" },
-]
+];
 
 const footerUsefulLinks = [
   { label: "Home", href: "/" },
@@ -36,26 +36,34 @@ const footerUsefulLinks = [
   { label: "Careers", href: "/careers" },
   { label: "FAQs", href: "/faq" },
   { label: "Contact Us", href: "/contact-us" },
-]
+];
 
 const paymentMethods = [
   { name: "Visa", src: "/images/payments/visa.png" },
   { name: "Mastercard", src: "/images/payments/mastercard.png" },
   { name: "Amex", src: "/images/payments/amex.png" },
-]
+];
 
 const legalLinks = [
   { label: "Booking T&C'S", href: "/terms-and-conditions" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-]
+];
 
 function FooterSocialLinks() {
   const socialEntries = [
-    { Icon: FacebookIcon, href: contactData.socials.facebook, label: "Facebook" },
-    { Icon: InstagramIcon, href: contactData.socials.instagram, label: "Instagram" },
+    {
+      Icon: FacebookIcon,
+      href: contactData.socials.facebook,
+      label: "Facebook",
+    },
+    {
+      Icon: InstagramIcon,
+      href: contactData.socials.instagram,
+      label: "Instagram",
+    },
     { Icon: YouTubeIcon, href: contactData.socials.youtube, label: "YouTube" },
     { Icon: TikTokIcon, href: contactData.socials.tiktok, label: "TikTok" },
-  ]
+  ];
 
   return (
     <div className="flex items-center gap-3">
@@ -72,15 +80,15 @@ function FooterSocialLinks() {
         </a>
       ))}
     </div>
-  )
+  );
 }
 
 function FooterLinkList({
   title,
   links,
 }: {
-  title: string
-  links: { label: string; href: string }[]
+  title: string;
+  links: { label: string; href: string }[];
 }) {
   return (
     <div>
@@ -100,7 +108,7 @@ function FooterLinkList({
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 function FooterContactItem({
@@ -109,10 +117,10 @@ function FooterContactItem({
   label,
   isExternal = false,
 }: {
-  icon: React.ReactNode
-  href: string
-  label: string
-  isExternal?: boolean
+  icon: React.ReactNode;
+  href: string;
+  label: string;
+  isExternal?: boolean;
 }) {
   return (
     <a
@@ -123,7 +131,7 @@ function FooterContactItem({
       <span className="shrink-0 mt-0.5 text-primary-500">{icon}</span>
       {label}
     </a>
-  )
+  );
 }
 
 export function Footer() {
@@ -209,14 +217,11 @@ export function Footer() {
             ))}
           </div>
           <p className="text-neutral-500 text-sm font-body">
-            &copy; 2025 Luxury Super Car Rentals. All rights reserved.
+            &copy; {new Date().getFullYear()} Luxury Super Car Rentals. All
+            rights reserved.
           </p>
-        </div>
-
-        <div className="mt-8 flex justify-center border-t border-neutral-800 pt-8">
-          <FooterSocialLinks />
         </div>
       </div>
     </footer>
-  )
+  );
 }

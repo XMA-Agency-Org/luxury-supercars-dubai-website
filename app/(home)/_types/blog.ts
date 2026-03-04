@@ -4,4 +4,13 @@ export type BlogPost = {
   date: string
   thumbnailPath: string
   href: string
+  excerpt?: string
+  category?: string
+  readingTime?: string
+  content?: BlogSection[]
+}
+
+export type BlogSection = {
+  heading: string
+  body: string
 }

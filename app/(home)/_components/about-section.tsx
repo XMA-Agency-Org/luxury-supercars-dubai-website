@@ -1,6 +1,6 @@
 import Image from "next/image"
+import NextLink from "next/link"
 import { SectionHeading } from "@/components/ui/section-heading"
-import { Link } from "@/components/ui/link"
 import { buttonVariants } from "@/components/ui/button-variants"
 import { cn } from "@/lib/utils"
 
@@ -38,14 +38,14 @@ function AboutSection() {
           </p>
 
           <div className="pt-2">
-            <Link
+            <NextLink
               href="/our-fleet"
               className={cn(
                 buttonVariants({ intent: "primary", size: "md" })
               )}
             >
               Details
-            </Link>
+            </NextLink>
           </div>
         </div>
 

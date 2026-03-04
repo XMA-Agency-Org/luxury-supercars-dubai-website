@@ -25,6 +25,10 @@ function DesktopNavItem({ item }: { item: NavItem }) {
         className={cn(
           "text-neutral-50 hover:text-primary-500 font-cta font-medium text-sm transition-colors duration-200 flex items-center gap-1 py-2"
         )}
+        {...(hasDropdown && {
+          "aria-haspopup": "menu" as const,
+          "aria-expanded": isHovered,
+        })}
       >
         {item.label}
         {hasDropdown && (
