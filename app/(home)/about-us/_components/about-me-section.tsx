@@ -14,7 +14,7 @@ function AboutMeSection() {
             {aboutMeSection.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-neutral-400 leading-relaxed mb-4 last:mb-0"
+                className="text-neutral-500 leading-relaxed mb-4 last:mb-0"
               >
                 {paragraph}
               </p>

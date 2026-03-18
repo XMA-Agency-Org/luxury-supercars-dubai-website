@@ -6,11 +6,15 @@ import type { NavItem } from "@/app/(home)/_types/navigation"
 import { cn } from "@/lib/utils"
 import { DropdownPanel } from "./dropdown-panel"
 
+const NAV_LINK_TRANSPARENT = "text-white hover:text-primary-500 font-cta font-medium text-sm transition-colors duration-200 flex items-center gap-1 py-2"
+const NAV_LINK_SOLID = "text-neutral-50 hover:text-primary-500 font-cta font-medium text-sm transition-colors duration-200 flex items-center gap-1 py-2"
+
 interface DesktopNavProps {
   items: NavItem[]
+  isTransparent?: boolean
 }
 
-function DesktopNavItem({ item }: { item: NavItem }) {
+function DesktopNavItem({ item, isTransparent }: { item: NavItem; isTransparent?: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
   const hasDropdown = item.dropdown && item.dropdown.length > 0
 
@@ -22,9 +26,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     >
       <NextLink
         href={item.href}
-        className={cn(
-          "text-neutral-50 hover:text-primary-500 font-cta font-medium text-sm transition-colors duration-200 flex items-center gap-1 py-2"
-        )}
+        className={isTransparent ? NAV_LINK_TRANSPARENT : NAV_LINK_SOLID}
         {...(hasDropdown && {
           "aria-haspopup": "menu" as const,
           "aria-expanded": isHovered,
@@ -56,11 +58,11 @@ function DesktopNavItem({ item }: { item: NavItem }) {
   )
 }
 
-export function DesktopNav({ items }: DesktopNavProps) {
+export function DesktopNav({ items, isTransparent }: DesktopNavProps) {
   return (
     <nav className="hidden lg:flex items-center gap-6">
       {items.map((item) => (
-        <DesktopNavItem key={item.label} item={item} />
+        <DesktopNavItem key={item.label} item={item} isTransparent={isTransparent} />
       ))}
     </nav>
   )

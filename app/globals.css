@@ -1,74 +1,157 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Primary — Gold */
-  --color-primary-50: oklch(0.97 0.03 80);
-  --color-primary-100: oklch(0.94 0.05 80);
-  --color-primary-200: oklch(0.90 0.07 80);
-  --color-primary-300: oklch(0.86 0.09 80);
-  --color-primary-400: oklch(0.82 0.09 80);
-  --color-primary-500: oklch(0.76 0.11 80);
-  --color-primary-600: oklch(0.68 0.12 80);
-  --color-primary-700: oklch(0.58 0.12 80);
-  --color-primary-800: oklch(0.48 0.10 80);
-  --color-primary-900: oklch(0.38 0.08 80);
-  --color-primary-950: oklch(0.28 0.06 80);
+  /* Custom Gold Color Palette */
+  --color-gold-50: oklch(0.97 0.03 80);
+  --color-gold-100: oklch(0.94 0.05 80);
+  --color-gold-200: oklch(0.90 0.07 80);
+  --color-gold-300: oklch(0.86 0.09 80);
+  --color-gold-400: oklch(0.82 0.11 80);
+  --color-gold-500: oklch(0.76 0.13 80);
+  --color-gold-600: oklch(0.68 0.13 80);
+  --color-gold-700: oklch(0.58 0.12 80);
+  --color-gold-800: oklch(0.48 0.10 80);
+  --color-gold-900: oklch(0.38 0.08 80);
+  --color-gold-950: oklch(0.28 0.06 80);
 
-  /* Neutral — Cool gray */
-  --color-neutral-50: oklch(0.98 0 0);
-  --color-neutral-100: oklch(0.93 0 0);
-  --color-neutral-200: oklch(0.87 0 0);
-  --color-neutral-300: oklch(0.78 0 0);
-  --color-neutral-400: oklch(0.67 0 0);
-  --color-neutral-500: oklch(0.57 0 0);
-  --color-neutral-600: oklch(0.45 0 0);
-  --color-neutral-700: oklch(0.35 0 0);
-  --color-neutral-800: oklch(0.25 0 0);
-  --color-neutral-900: oklch(0.20 0 0);
-  --color-neutral-950: oklch(0.15 0 0);
+  /* Custom Warm Dark Color Palette */
+  --color-warm-dark-50: oklch(0.93 0.002 60);
+  --color-warm-dark-100: oklch(0.88 0.002 60);
+  --color-warm-dark-200: oklch(0.80 0.003 60);
+  --color-warm-dark-300: oklch(0.72 0.003 60);
+  --color-warm-dark-400: oklch(0.65 0.004 60);
+  --color-warm-dark-500: oklch(0.55 0.005 60);
+  --color-warm-dark-600: oklch(0.45 0.005 60);
+  --color-warm-dark-700: oklch(0.33 0.006 60);
+  --color-warm-dark-800: oklch(0.26 0.006 60);
+  --color-warm-dark-900: oklch(0.21 0.008 60);
+  --color-warm-dark-950: oklch(0.18 0.008 60);
 
-  /* Success — Green */
-  --color-success-50: oklch(0.96 0.04 142);
-  --color-success-100: oklch(0.91 0.07 142);
-  --color-success-200: oklch(0.84 0.10 142);
-  --color-success-300: oklch(0.75 0.12 142);
-  --color-success-400: oklch(0.64 0.14 142);
-  --color-success-500: oklch(0.53 0.14 142);
-  --color-success-600: oklch(0.45 0.12 142);
-  --color-success-700: oklch(0.38 0.10 142);
-  --color-success-800: oklch(0.30 0.08 142);
-  --color-success-900: oklch(0.24 0.06 142);
-  --color-success-950: oklch(0.18 0.04 142);
+  /* Custom Green Color Palette */
+  --color-green-50: oklch(0.96 0.04 142);
+  --color-green-100: oklch(0.91 0.07 142);
+  --color-green-200: oklch(0.84 0.10 142);
+  --color-green-300: oklch(0.75 0.12 142);
+  --color-green-400: oklch(0.64 0.14 142);
+  --color-green-500: oklch(0.53 0.14 142);
+  --color-green-600: oklch(0.45 0.12 142);
+  --color-green-700: oklch(0.38 0.10 142);
+  --color-green-800: oklch(0.30 0.08 142);
+  --color-green-900: oklch(0.24 0.06 142);
+  --color-green-950: oklch(0.18 0.04 142);
 
-  /* Warning — Amber */
-  --color-warning-50: oklch(0.97 0.04 85);
-  --color-warning-100: oklch(0.93 0.07 85);
-  --color-warning-200: oklch(0.88 0.10 85);
-  --color-warning-300: oklch(0.82 0.13 85);
-  --color-warning-400: oklch(0.75 0.14 85);
-  --color-warning-500: oklch(0.68 0.15 85);
-  --color-warning-600: oklch(0.58 0.14 85);
-  --color-warning-700: oklch(0.48 0.12 85);
-  --color-warning-800: oklch(0.40 0.10 85);
-  --color-warning-900: oklch(0.32 0.08 85);
-  --color-warning-950: oklch(0.24 0.06 85);
+  /* Custom Amber Color Palette */
+  --color-amber-50: oklch(0.97 0.04 85);
+  --color-amber-100: oklch(0.93 0.07 85);
+  --color-amber-200: oklch(0.88 0.10 85);
+  --color-amber-300: oklch(0.82 0.13 85);
+  --color-amber-400: oklch(0.75 0.14 85);
+  --color-amber-500: oklch(0.68 0.15 85);
+  --color-amber-600: oklch(0.58 0.14 85);
+  --color-amber-700: oklch(0.48 0.12 85);
+  --color-amber-800: oklch(0.40 0.10 85);
+  --color-amber-900: oklch(0.32 0.08 85);
+  --color-amber-950: oklch(0.24 0.06 85);
 
-  /* Error — Red */
-  --color-error-50: oklch(0.97 0.03 25);
-  --color-error-100: oklch(0.93 0.06 25);
-  --color-error-200: oklch(0.87 0.09 25);
-  --color-error-300: oklch(0.78 0.12 25);
-  --color-error-400: oklch(0.68 0.14 25);
-  --color-error-500: oklch(0.58 0.16 25);
-  --color-error-600: oklch(0.48 0.16 25);
-  --color-error-700: oklch(0.40 0.14 25);
-  --color-error-800: oklch(0.32 0.12 25);
-  --color-error-900: oklch(0.26 0.09 25);
-  --color-error-950: oklch(0.20 0.06 25);
+  /* Custom Red Color Palette */
+  --color-red-50: oklch(0.97 0.03 25);
+  --color-red-100: oklch(0.93 0.06 25);
+  --color-red-200: oklch(0.87 0.09 25);
+  --color-red-300: oklch(0.78 0.12 25);
+  --color-red-400: oklch(0.68 0.14 25);
+  --color-red-500: oklch(0.58 0.16 25);
+  --color-red-600: oklch(0.48 0.16 25);
+  --color-red-700: oklch(0.40 0.14 25);
+  --color-red-800: oklch(0.32 0.12 25);
+  --color-red-900: oklch(0.26 0.09 25);
+  --color-red-950: oklch(0.20 0.06 25);
+
+  /* Primary Color Palette — Gold for luxury accent */
+  --color-primary-50: var(--color-gold-50);
+  --color-primary-100: var(--color-gold-100);
+  --color-primary-200: var(--color-gold-200);
+  --color-primary-300: var(--color-gold-300);
+  --color-primary-400: var(--color-gold-400);
+  --color-primary-500: var(--color-gold-500);
+  --color-primary-600: var(--color-gold-600);
+  --color-primary-700: var(--color-gold-700);
+  --color-primary-800: var(--color-gold-800);
+  --color-primary-900: var(--color-gold-900);
+  --color-primary-950: var(--color-gold-950);
+
+  /* Neutral Color Palette — Warm dark for dark mode neutrals */
+  --color-neutral-50: var(--color-warm-dark-50);
+  --color-neutral-100: var(--color-warm-dark-100);
+  --color-neutral-200: var(--color-warm-dark-200);
+  --color-neutral-300: var(--color-warm-dark-300);
+  --color-neutral-400: var(--color-warm-dark-400);
+  --color-neutral-500: var(--color-warm-dark-500);
+  --color-neutral-600: var(--color-warm-dark-600);
+  --color-neutral-700: var(--color-warm-dark-700);
+  --color-neutral-800: var(--color-warm-dark-800);
+  --color-neutral-900: var(--color-warm-dark-900);
+  --color-neutral-950: var(--color-warm-dark-950);
+
+  /* Success Color Palette — Green */
+  --color-success-50: var(--color-green-50);
+  --color-success-100: var(--color-green-100);
+  --color-success-200: var(--color-green-200);
+  --color-success-300: var(--color-green-300);
+  --color-success-400: var(--color-green-400);
+  --color-success-500: var(--color-green-500);
+  --color-success-600: var(--color-green-600);
+  --color-success-700: var(--color-green-700);
+  --color-success-800: var(--color-green-800);
+  --color-success-900: var(--color-green-900);
+  --color-success-950: var(--color-green-950);
+
+  /* Warning Color Palette — Amber */
+  --color-warning-50: var(--color-amber-50);
+  --color-warning-100: var(--color-amber-100);
+  --color-warning-200: var(--color-amber-200);
+  --color-warning-300: var(--color-amber-300);
+  --color-warning-400: var(--color-amber-400);
+  --color-warning-500: var(--color-amber-500);
+  --color-warning-600: var(--color-amber-600);
+  --color-warning-700: var(--color-amber-700);
+  --color-warning-800: var(--color-amber-800);
+  --color-warning-900: var(--color-amber-900);
+  --color-warning-950: var(--color-amber-950);
+
+  /* Error Color Palette — Red */
+  --color-error-50: var(--color-red-50);
+  --color-error-100: var(--color-red-100);
+  --color-error-200: var(--color-red-200);
+  --color-error-300: var(--color-red-300);
+  --color-error-400: var(--color-red-400);
+  --color-error-500: var(--color-red-500);
+  --color-error-600: var(--color-red-600);
+  --color-error-700: var(--color-red-700);
+  --color-error-800: var(--color-red-800);
+  --color-error-900: var(--color-red-900);
+  --color-error-950: var(--color-red-950);
+
+  /* Accent Color Palette — Secondary brand color */
+  --color-accent-50: var(--color-warm-dark-50);
+  --color-accent-100: var(--color-warm-dark-100);
+  --color-accent-200: var(--color-warm-dark-200);
+  --color-accent-300: var(--color-warm-dark-300);
+  --color-accent-400: var(--color-warm-dark-400);
+  --color-accent-500: var(--color-warm-dark-500);
+  --color-accent-600: var(--color-warm-dark-600);
+  --color-accent-700: var(--color-warm-dark-700);
+  --color-accent-800: var(--color-warm-dark-800);
+  --color-accent-900: var(--color-warm-dark-900);
+  --color-accent-950: var(--color-warm-dark-950);
+
+  /* Surface tokens for dark mode */
+  --color-surface: oklch(0.22 0.008 60);
+  --color-surface-elevated: oklch(0.25 0.008 60);
+  --color-on-primary: oklch(0.15 0 0);
 
   /* Font families */
   --font-heading: "Epilogue", sans-serif;
-  --font-body: "Roboto", sans-serif;
+  --font-body: "DM Sans", sans-serif;
   --font-cta: "Poppins", sans-serif;
 
   /* Animations */

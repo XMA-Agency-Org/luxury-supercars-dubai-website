@@ -22,7 +22,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           <StarIcon key={index} className="text-primary-500" />
         ))}
       </div>
-      <p className="text-neutral-300 italic text-sm leading-relaxed mb-6">
+      <p className="text-neutral-400 italic text-sm leading-relaxed mb-6">
         &ldquo;{testimonial.text}&rdquo;
       </p>
       <div className="flex items-center gap-3">
@@ -53,8 +53,8 @@ function GoogleReviewBadge() {
           <StarIcon key={index} className="text-primary-500" />
         ))}
       </div>
-      <p className="text-neutral-400 text-sm">Based on 377 reviews</p>
-      <p className="text-neutral-500 text-xs mt-2">powered by Google</p>
+      <p className="text-neutral-500 text-sm">Based on 377 reviews</p>
+      <p className="text-neutral-600 text-xs mt-2">powered by Google</p>
       <a
         href="https://www.google.com/maps/place/Luxury+Supercars+Dubai/"
         target="_blank"
@@ -94,7 +94,7 @@ function TestimonialsCarousel({
           <button
             type="button"
             onClick={() => scrollBy("left")}
-            className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
+            className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
             aria-label="Scroll testimonials left"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -102,7 +102,7 @@ function TestimonialsCarousel({
           <button
             type="button"
             onClick={() => scrollBy("right")}
-            className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
+            className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
             aria-label="Scroll testimonials right"
           >
             <ChevronRight className="w-5 h-5" />

@@ -41,18 +41,18 @@ function BlogGrid({ blogs, itemsPerPage = 6 }: BlogGridProps) {
                         {blog.category}
                       </Badge>
                     )}
-                    <span className="text-xs text-neutral-500">{blog.date}</span>
+                    <span className="text-xs text-neutral-600">{blog.date}</span>
                   </div>
                   <h3 className="font-heading text-lg font-semibold line-clamp-2 group-hover:text-primary-500 transition-colors">
                     {blog.title}
                   </h3>
                   {blog.excerpt && (
-                    <p className="text-neutral-400 text-sm mt-2 line-clamp-2">
+                    <p className="text-neutral-500 text-sm mt-2 line-clamp-2">
                       {blog.excerpt}
                     </p>
                   )}
                   {blog.readingTime && (
-                    <p className="text-neutral-500 text-xs mt-3">
+                    <p className="text-neutral-600 text-xs mt-3">
                       {blog.readingTime}
                     </p>
                   )}

@@ -13,7 +13,10 @@ const CURRENCIES: { value: Currency; label: string }[] = [
   { value: "GBP", label: "GBP" },
 ]
 
-export function CurrencySelector() {
+const TRIGGER_TRANSPARENT = "flex items-center gap-1.5 text-sm font-cta font-medium text-white/70 transition-colors duration-200 hover:text-primary-500 cursor-pointer"
+const TRIGGER_SOLID = "flex items-center gap-1.5 text-sm font-cta font-medium text-neutral-400 transition-colors duration-200 hover:text-primary-500 cursor-pointer"
+
+export function CurrencySelector({ isTransparent }: { isTransparent?: boolean }) {
   const { currency, setCurrency } = useCurrency()
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -36,7 +39,7 @@ export function CurrencySelector() {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-1.5 text-sm font-cta font-medium text-neutral-300 transition-colors duration-200 hover:text-primary-500 cursor-pointer"
+        className={isTransparent ? TRIGGER_TRANSPARENT : TRIGGER_SOLID}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label="Select currency"
@@ -53,7 +56,7 @@ export function CurrencySelector() {
         role="listbox"
         aria-label="Available currencies"
         className={cn(
-          "absolute top-full right-0 mt-2 min-w-20 rounded-lg border border-neutral-800 bg-neutral-900 py-1 shadow-xl transition-all duration-200 z-50",
+          "absolute top-full right-0 mt-2 min-w-20 rounded-lg border border-neutral-800 bg-surface py-1 shadow-lg shadow-black/20 transition-all duration-200 z-50",
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-1 pointer-events-none"
@@ -72,8 +75,8 @@ export function CurrencySelector() {
             className={cn(
               "w-full px-3 py-1.5 text-left text-sm font-cta transition-colors duration-150 cursor-pointer",
               value === currency
-                ? "text-primary-500 bg-neutral-800/50"
-                : "text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800/30"
+                ? "text-primary-500 bg-neutral-900/50"
+                : "text-neutral-500 hover:text-neutral-50 hover:bg-neutral-900/30"
             )}
           >
             {label}

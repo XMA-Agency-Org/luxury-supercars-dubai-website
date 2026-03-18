@@ -16,7 +16,7 @@ function AboutSection() {
             <span className="text-primary-500">Dubai, UAE</span>
           </SectionHeading>
 
-          <p className="leading-relaxed text-neutral-300">
+          <p className="leading-relaxed text-neutral-400">
             When it comes to Luxury Car Rental in Dubai, Luxury Supercars Dubai
             is your ultimate destination. We pride ourselves on offering a
             premium selection of world-class vehicles, allowing you to immerse
@@ -26,7 +26,7 @@ function AboutSection() {
             to cater to your every need.
           </p>
 
-          <p className="leading-relaxed text-neutral-300">
+          <p className="leading-relaxed text-neutral-400">
             Dubai is a city synonymous with opulence, and there&apos;s no better
             way to explore its iconic landmarks and breathtaking skyline than
             behind the wheel of a prestigious luxury car. At Luxury Supercars

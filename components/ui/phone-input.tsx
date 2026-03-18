@@ -38,11 +38,11 @@ const phoneInputVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-neutral-900/60 border border-neutral-700 text-neutral-50 has-[input:focus]:bg-neutral-900",
+          "bg-surface/60 border border-neutral-700 text-neutral-50 has-[input:focus]:bg-surface",
         light:
-          "bg-neutral-800/60 border border-neutral-700 text-neutral-50 has-[input:focus]:bg-neutral-800",
+          "bg-neutral-900/60 border border-neutral-700 text-neutral-50 has-[input:focus]:bg-neutral-900",
         surface:
-          "bg-white border border-neutral-300 text-neutral-950 has-[input:focus]:border-primary-500",
+          "bg-surface border border-neutral-700 text-neutral-50 has-[input:focus]:border-primary-500",
       },
     },
     defaultVariants: {
@@ -177,13 +177,13 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           <PopoverTrigger asChild>
             <button
               type="button"
-              className="flex items-center gap-1 pl-2.5 pr-1 py-2.5 shrink-0 cursor-pointer rounded-l-lg hover:bg-neutral-700/30 transition-colors -ml-px -my-px"
+              className="flex items-center gap-1 pl-2.5 pr-1 py-2.5 shrink-0 cursor-pointer rounded-l-lg hover:bg-neutral-800/30 transition-colors -ml-px -my-px"
             >
               <div className="w-5 h-5 rounded-full shrink-0 flex items-center justify-center">
                 {displayFlag ? (
                   <CircleFlag countryCode={displayFlag} height={20} />
                 ) : (
-                  <GlobeIcon className="w-4 h-4 text-neutral-500" />
+                  <GlobeIcon className="w-4 h-4 text-neutral-600" />
                 )}
               </div>
             </button>
@@ -194,14 +194,14 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           >
             <Command className="bg-transparent">
               <div className="flex items-center gap-2 border-b border-neutral-800 px-3 py-2">
-                <SearchIcon className="w-4 h-4 text-neutral-500 shrink-0" />
+                <SearchIcon className="w-4 h-4 text-neutral-600 shrink-0" />
                 <Command.Input
                   placeholder="Search country..."
-                  className="flex-1 bg-transparent text-sm text-neutral-50 placeholder:text-neutral-500 outline-none"
+                  className="flex-1 bg-transparent text-sm text-neutral-50 placeholder:text-neutral-600 outline-none"
                 />
               </div>
               <Command.List className="max-h-56 overflow-y-auto p-1">
-                <Command.Empty className="px-3 py-4 text-sm text-neutral-500 text-center">
+                <Command.Empty className="px-3 py-4 text-sm text-neutral-600 text-center">
                   No country found.
                 </Command.Empty>
                 {sortedCountries.map((country) => (
@@ -209,7 +209,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                     key={country.alpha2}
                     value={`${country.name} ${country.alpha2} ${country.countryCallingCodes[0]}`}
                     onSelect={() => handleCountrySelect(country)}
-                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-sm text-neutral-300 cursor-pointer data-[selected=true]:bg-neutral-800 data-[selected=true]:text-neutral-50 transition-colors"
+                    className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 cursor-pointer data-[selected=true]:bg-neutral-900 data-[selected=true]:text-neutral-50 transition-colors"
                   >
                     <div className="w-5 h-5 rounded-full shrink-0 flex items-center justify-center">
                       <CircleFlag
@@ -218,7 +218,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                       />
                     </div>
                     <span className="flex-1 truncate">{country.name}</span>
-                    <span className="text-neutral-500 text-xs shrink-0">
+                    <span className="text-neutral-600 text-xs shrink-0">
                       {country.countryCallingCodes[0]}
                     </span>
                     {countryData?.alpha2 === country.alpha2 && (
@@ -238,7 +238,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           type="tel"
           autoComplete="tel"
           name="phone"
-          className="flex-1 min-w-0 bg-transparent text-sm placeholder:text-neutral-500 outline-none py-2.5 pr-3"
+          className="flex-1 min-w-0 bg-transparent text-sm placeholder:text-neutral-600 outline-none py-2.5 pr-3"
           {...props}
         />
       </div>

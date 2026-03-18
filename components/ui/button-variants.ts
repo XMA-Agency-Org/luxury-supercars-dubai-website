@@ -6,13 +6,13 @@ export const buttonVariants = cva(
     variants: {
       intent: {
         primary:
-          "bg-primary-500 text-neutral-950 hover:bg-primary-400 active:bg-primary-600",
+          "bg-primary-500 text-on-primary hover:bg-primary-400 active:bg-primary-600",
         secondary:
           "bg-transparent border border-neutral-700 text-neutral-50 hover:border-primary-500 hover:text-primary-500 active:bg-primary-500/10",
         success:
-          "bg-success-500 text-neutral-50 hover:bg-success-400 active:bg-success-600",
+          "bg-success-500 text-white hover:bg-success-400 active:bg-success-600",
         ghost:
-          "bg-transparent text-neutral-50 hover:bg-neutral-800 active:bg-neutral-700",
+          "bg-transparent text-neutral-50 hover:bg-neutral-900 active:bg-neutral-800",
       },
       size: {
         sm: "px-4 py-2 text-xs",

@@ -23,7 +23,7 @@ function ContactInfo() {
         </ContactIconCircle>
         <div>
           <h3 className="text-lg font-bold text-neutral-50">Phone</h3>
-          <p className="text-sm text-neutral-300 mt-1">
+          <p className="text-sm text-neutral-100 mt-1">
             <a href={contactData.phones[0].href} className="hover:text-primary-500 transition-colors">
               {contactData.phones[0].label}
             </a>
@@ -32,7 +32,7 @@ function ContactInfo() {
               {contactData.phones[1].label}
             </a>
           </p>
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-neutral-100">
             Landline:{" "}
             <a href={contactData.landline.href} className="hover:text-primary-500 transition-colors">
               {contactData.landline.label}
@@ -49,7 +49,7 @@ function ContactInfo() {
           <h3 className="text-lg font-bold text-neutral-50">Email</h3>
           <a
             href={contactData.email.href}
-            className="text-sm text-neutral-300 hover:text-primary-500 transition-colors mt-1 block"
+            className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
           >
             {contactData.email.label}
           </a>
@@ -66,7 +66,7 @@ function ContactInfo() {
             href={contactData.address.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-neutral-300 hover:text-primary-500 transition-colors mt-1 block"
+            className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
           >
             {contactData.address.label}
           </a>
@@ -84,7 +84,7 @@ function ContactFormCard() {
   const [message, setMessage] = useState("")
 
   return (
-    <div className="rounded-2xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-lg p-6 md:p-8">
+    <div className="rounded-2xl border border-neutral-800 bg-surface/80 backdrop-blur-lg p-6 md:p-8">
       <p className="text-sm font-medium text-primary-500">Contact</p>
       <h2 className="font-heading text-2xl font-bold text-neutral-50 mt-1 mb-6">
         How Can We Help You?
@@ -163,12 +163,12 @@ function ContactSection() {
   return (
     <section className="relative py-20">
       <Image
-        src="/images/about/showroom.webp"
+        src="/Hero.png"
         alt="Luxury cars showroom"
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-neutral-950/75" />
+      <div className="absolute inset-0 bg-neutral-950/25" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">

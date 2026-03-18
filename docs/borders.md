@@ -22,7 +22,6 @@ Two-tier system based on element role:
 ### Rules
 
 - Never use opacity modifiers on border colors (no `/30`, `/40`, `/50`, `/60`)
-- The only exception is `border-neutral-300` for the `surface` input variant (light theme)
 - Focus borders always use `primary-500` at full opacity
 
 ## Border Radius

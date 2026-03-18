@@ -7,7 +7,7 @@ const contactIconCircleVariants = cva(
     variants: {
       variant: {
         muted: "bg-primary-500/10 text-primary-500",
-        solid: "bg-primary-500 text-neutral-950",
+        solid: "bg-primary-500 text-neutral-50",
       },
     },
     defaultVariants: {

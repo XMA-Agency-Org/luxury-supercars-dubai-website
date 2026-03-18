@@ -73,7 +73,7 @@ function FooterSocialLinks() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-400 transition-colors duration-200 hover:text-primary-500"
+          className="text-neutral-500 transition-colors duration-200 hover:text-primary-500"
           aria-label={label}
         >
           <Icon />
@@ -100,7 +100,7 @@ function FooterLinkList({
           <li key={link.label}>
             <NextLink
               href={link.href}
-              className="text-neutral-400 text-sm font-body transition-colors duration-200 hover:text-primary-500"
+              className="text-neutral-500 text-sm font-body transition-colors duration-200 hover:text-primary-500"
             >
               {link.label}
             </NextLink>
@@ -125,7 +125,7 @@ function FooterContactItem({
   return (
     <a
       href={href}
-      className="flex items-start gap-3 text-neutral-400 text-sm font-body transition-colors duration-200 hover:text-primary-500"
+      className="flex items-start gap-3 text-neutral-500 text-sm font-body transition-colors duration-200 hover:text-primary-500"
       {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
     >
       <span className="shrink-0 mt-0.5 text-primary-500">{icon}</span>
@@ -143,7 +143,7 @@ export function Footer() {
             <NextLink href="/">
               <Logo width={160} height={50} />
             </NextLink>
-            <p className="text-neutral-400 text-sm leading-relaxed font-body">
+            <p className="text-neutral-500 text-sm leading-relaxed font-body">
               {footerDescription}
             </p>
             <FooterSocialLinks />
@@ -206,7 +206,7 @@ export function Footer() {
               <span key={link.label} className="flex items-center gap-4">
                 <NextLink
                   href={link.href}
-                  className="text-neutral-500 text-sm font-body transition-colors duration-200 hover:text-primary-500"
+                  className="text-neutral-600 text-sm font-body transition-colors duration-200 hover:text-primary-500"
                 >
                   {link.label}
                 </NextLink>
@@ -216,7 +216,7 @@ export function Footer() {
               </span>
             ))}
           </div>
-          <p className="text-neutral-500 text-sm font-body">
+          <p className="text-neutral-600 text-sm font-body">
             &copy; {new Date().getFullYear()} Luxury Super Car Rentals. All
             rights reserved.
           </p>

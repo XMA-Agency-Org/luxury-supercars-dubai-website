@@ -12,7 +12,7 @@ function BrandDescription({ name, description }: BrandDescriptionProps) {
             About <span className="text-primary-500">{name}</span> Rentals in
             Dubai
           </h2>
-          <p className="text-neutral-400 leading-relaxed text-lg">
+          <p className="text-neutral-500 leading-relaxed text-lg">
             {description}
           </p>
         </div>

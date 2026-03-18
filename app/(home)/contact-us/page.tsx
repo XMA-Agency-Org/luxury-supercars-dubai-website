@@ -25,7 +25,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <ContactInfoCards />
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-lg p-6 md:p-8">
+            <div className="rounded-2xl border border-neutral-800 bg-surface/80 backdrop-blur-lg p-6 md:p-8">
               <h2 className="font-heading text-2xl font-bold mb-6">
                 Send Us a Message
               </h2>

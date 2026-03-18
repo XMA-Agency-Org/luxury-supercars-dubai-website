@@ -17,14 +17,14 @@ export function FloatingCallButton() {
         <div className="absolute inset-0 rounded-full bg-success-500 opacity-40 animate-pulse-ring" />
         <div
           className={cn(
-            "relative flex items-center justify-center rounded-full bg-success-500 text-neutral-50 shadow-lg",
+            "relative flex items-center justify-center rounded-full bg-success-500 text-white shadow-lg",
             "h-14 w-14 md:h-14 md:w-14"
           )}
         >
           <PhoneIcon className="h-6 w-6" />
         </div>
       </div>
-      <span className="rounded-full bg-success-500 px-4 py-2 text-sm font-semibold text-neutral-50 shadow-lg md:hidden">
+      <span className="rounded-full bg-success-500 px-4 py-2 text-sm font-semibold text-white shadow-lg md:hidden">
         Call Now
       </span>
     </a>

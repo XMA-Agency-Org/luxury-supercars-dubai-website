@@ -15,9 +15,9 @@ const DropdownMenuTrigger = forwardRef<
   <DropdownMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex w-full items-center justify-between rounded-lg border border-neutral-700 bg-neutral-800/60 px-4 py-2.5 text-sm text-neutral-400 outline-none transition-colors",
-      "hover:border-neutral-600",
-      "data-[state=open]:border-primary-500 data-[state=open]:bg-neutral-800",
+      "flex w-full items-center justify-between rounded-lg border border-neutral-700 bg-neutral-900/60 px-4 py-2.5 text-sm text-neutral-500 outline-none transition-colors",
+      "hover:border-neutral-400",
+      "data-[state=open]:border-primary-500 data-[state=open]:bg-neutral-900",
       className
     )}
     {...props}
@@ -34,7 +34,7 @@ const DropdownMenuContent = forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 max-h-60 w-[var(--radix-dropdown-menu-trigger-width)] overflow-y-auto rounded-xl border border-neutral-800 bg-neutral-900 p-1 shadow-lg",
+        "z-50 max-h-60 w-[var(--radix-dropdown-menu-trigger-width)] overflow-y-auto rounded-xl border border-neutral-800 bg-surface p-1 shadow-lg shadow-black/20",
         "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
         "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
         "data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2",
@@ -56,10 +56,10 @@ const DropdownMenuItem = forwardRef<
     ref={ref}
     className={cn(
       "relative flex w-full cursor-pointer items-center rounded-lg px-3 py-2 text-sm outline-none transition-colors",
-      "focus:bg-neutral-800 focus:text-neutral-50",
+      "focus:bg-neutral-900 focus:text-neutral-50",
       isSelected
         ? "bg-primary-500/10 text-primary-500"
-        : "text-neutral-400 hover:text-neutral-50",
+        : "text-neutral-500 hover:text-neutral-50",
       className
     )}
     {...props}
@@ -77,7 +77,7 @@ const DropdownMenuLabel = forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-500",
+      "px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-600",
       className
     )}
     {...props}
@@ -91,7 +91,7 @@ const DropdownMenuSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cn("my-1 h-px bg-neutral-800", className)}
+    className={cn("my-1 h-px bg-neutral-900", className)}
     {...props}
   />
 ))

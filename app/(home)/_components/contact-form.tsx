@@ -25,7 +25,7 @@ function ContactForm() {
           <span className="text-primary-500">Help You?</span>
         </SectionHeading>
 
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 md:p-8">
+        <div className="rounded-2xl border border-neutral-800 bg-surface/80 p-6 md:p-8">
           <div className="space-y-4">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <FormField label="Full Name">

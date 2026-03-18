@@ -25,7 +25,7 @@ function BrandLogo({ brand }: { brand: Brand }) {
 
 export function BrandMarquee({ brands }: BrandMarqueeProps) {
   return (
-    <section className="w-full py-12 bg-neutral-900/50">
+    <section className="w-full py-12 bg-neutral-900/80">
       <div className="overflow-hidden">
         <div className="flex gap-12 animate-marquee hover:[animation-play-state:paused]">
           {brands.map((brand) => (

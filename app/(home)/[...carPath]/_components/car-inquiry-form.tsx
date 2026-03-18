@@ -19,7 +19,7 @@ function CarInquiryForm({ carName }: CarInquiryFormProps) {
           <SectionHeading className="mb-8 text-center">
             Enquire About This <span className="text-primary-500">Car</span>
           </SectionHeading>
-          <div className="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 md:p-8">
+          <div className="rounded-2xl border border-neutral-800 bg-surface/80 p-6 md:p-8">
             <form className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FormField label="Full Name">

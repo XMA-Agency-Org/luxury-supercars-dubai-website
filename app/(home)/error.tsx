@@ -14,7 +14,7 @@ export default function HomeError({
       <h1 className="mt-4 font-heading text-2xl font-bold text-neutral-50">
         Something went wrong
       </h1>
-      <p className="mt-2 text-neutral-400">
+      <p className="mt-2 text-neutral-500">
         An unexpected error occurred. Please try again.
       </p>
       <Button intent="primary" size="lg" onClick={reset} className="mt-8">

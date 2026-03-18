@@ -33,7 +33,7 @@ function CarTypeSlider({ carCategories }: CarTypeSliderProps) {
             <button
               type="button"
               onClick={() => scrollBy("left")}
-              className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
               aria-label="Scroll car types left"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -41,7 +41,7 @@ function CarTypeSlider({ carCategories }: CarTypeSliderProps) {
             <button
               type="button"
               onClick={() => scrollBy("right")}
-              className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-full border border-neutral-700 flex items-center justify-center text-neutral-400 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer"
               aria-label="Scroll car types right"
             >
               <ChevronRight className="w-4 h-4" />

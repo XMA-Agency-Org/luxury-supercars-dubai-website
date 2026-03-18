@@ -56,7 +56,7 @@ function FleetGrid() {
           <CarFiltersSidebar onFiltersChange={handleFiltersChange} />
 
           <div>
-            <p className="text-neutral-400 text-sm mb-6">
+            <p className="text-neutral-500 text-sm mb-6">
               {filteredCars.length} {filteredCars.length === 1 ? "car" : "cars"}{" "}
               available
             </p>
@@ -66,7 +66,7 @@ function FleetGrid() {
                 <h3 className="font-heading text-xl font-bold mb-2">
                   No cars found
                 </h3>
-                <p className="text-neutral-400">
+                <p className="text-neutral-500">
                   Try adjusting your filters to see more results.
                 </p>
               </div>

@@ -45,7 +45,7 @@ function FaqItem({ id, question, answer }: FaqItemProps) {
         )}
       >
         <div className="overflow-hidden">
-          <p className="text-neutral-400 text-sm pb-5 leading-relaxed">
+          <p className="text-neutral-500 text-sm pb-5 leading-relaxed">
             {answer}
           </p>
         </div>

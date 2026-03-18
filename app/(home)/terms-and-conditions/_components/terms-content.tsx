@@ -10,7 +10,7 @@ function TermsContent() {
               <h2 className="font-heading text-xl font-semibold mb-3">
                 {section.heading}
               </h2>
-              <p className="text-neutral-400 leading-relaxed">{section.body}</p>
+              <p className="text-neutral-500 leading-relaxed">{section.body}</p>
             </div>
           ))}
         </div>

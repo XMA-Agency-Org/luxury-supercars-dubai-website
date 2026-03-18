@@ -36,11 +36,11 @@ function ReviewCard({ review, className }: ReviewCardProps) {
         />
         <div>
           <p className="text-neutral-50 font-medium text-sm">{review.name}</p>
-          <p className="text-neutral-500 text-xs">{review.timeAgo}</p>
+          <p className="text-neutral-600 text-xs">{review.timeAgo}</p>
         </div>
       </div>
       <StarsRow rating={review.rating} />
-      <p className="text-neutral-300 text-sm mt-3 line-clamp-4 leading-relaxed">
+      <p className="text-neutral-400 text-sm mt-3 line-clamp-4 leading-relaxed">
         {review.text}
       </p>
     </Card>

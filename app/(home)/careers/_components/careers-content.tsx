@@ -9,7 +9,7 @@ function CareersContent() {
   return (
     <section className="pb-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <p className="text-neutral-400 text-lg leading-relaxed">
+        <p className="text-neutral-500 text-lg leading-relaxed">
           {careersIntro}
         </p>
 
@@ -21,7 +21,7 @@ function CareersContent() {
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary-500 shrink-0" />
-                <span className="text-neutral-400">{benefit}</span>
+                <span className="text-neutral-500">{benefit}</span>
               </li>
             ))}
           </ul>
@@ -32,8 +32,8 @@ function CareersContent() {
             Open <span className="text-primary-500">Positions</span>
           </SectionHeading>
           {currentPositions.length === 0 ? (
-            <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-8 text-center">
-              <p className="text-neutral-400 mb-4">
+            <div className="rounded-2xl border border-neutral-800 bg-surface p-8 text-center">
+              <p className="text-neutral-500 mb-4">
                 There are no open positions at the moment. However, we&apos;re
                 always interested in hearing from talented individuals.
               </p>
@@ -50,7 +50,7 @@ function CareersContent() {
               {currentPositions.map((position) => (
                 <div
                   key={position.title}
-                  className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6"
+                  className="rounded-2xl border border-neutral-800 bg-surface p-6"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-heading text-lg font-semibold">
@@ -60,10 +60,10 @@ function CareersContent() {
                       {position.type}
                     </span>
                   </div>
-                  <p className="text-neutral-500 text-sm mb-2">
+                  <p className="text-neutral-600 text-sm mb-2">
                     {position.department}
                   </p>
-                  <p className="text-neutral-400">{position.description}</p>
+                  <p className="text-neutral-500">{position.description}</p>
                 </div>
               ))}
             </div>

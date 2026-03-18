@@ -112,7 +112,7 @@ function CarFiltersSidebar({
               "block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
               category === null
                 ? "bg-primary-500/10 text-primary-500"
-                : "text-neutral-400 hover:text-neutral-50"
+                : "text-neutral-500 hover:text-neutral-50"
             )}
           >
             All Types
@@ -125,7 +125,7 @@ function CarFiltersSidebar({
                 "block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                 category === cat.slug
                   ? "bg-primary-500/10 text-primary-500"
-                  : "text-neutral-400 hover:text-neutral-50"
+                  : "text-neutral-500 hover:text-neutral-50"
               )}
             >
               {cat.name}
@@ -136,7 +136,7 @@ function CarFiltersSidebar({
 
       {showBrands && (
         <div>
-          <h4 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-3">
+          <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
             Brand
           </h4>
           <DropdownMenu open={brandOpen} onOpenChange={setBrandOpen}>
@@ -169,7 +169,7 @@ function CarFiltersSidebar({
       )}
 
       <div>
-        <h4 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-3">
+        <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
           Daily Price
         </h4>
         <DropdownMenu open={priceOpen} onOpenChange={setPriceOpen}>
@@ -218,12 +218,12 @@ function CarFiltersSidebar({
             className="absolute inset-0 bg-neutral-950/80"
             onClick={() => setIsMobileOpen(false)}
           />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-neutral-900 border-l border-neutral-800 p-6 overflow-y-auto">
+          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface border-l border-neutral-800 p-6 overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-heading text-xl font-bold">Filters</h2>
               <button
                 onClick={() => setIsMobileOpen(false)}
-                className="p-2 text-neutral-400 hover:text-neutral-50"
+                className="p-2 text-neutral-500 hover:text-neutral-50"
                 aria-label="Close filters"
               >
                 <X className="w-5 h-5" />
@@ -240,7 +240,7 @@ function CarFiltersSidebar({
           className
         )}
       >
-        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+        <div className="rounded-2xl border border-neutral-800 bg-surface p-6">
           {filterContent}
         </div>
       </aside>
@@ -257,7 +257,7 @@ function FilterGroup({
 }) {
   return (
     <div>
-      <h4 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-3">
+      <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
         {title}
       </h4>
       <div className="space-y-1">{children}</div>

@@ -25,7 +25,7 @@ function BrandCarGrid({ brandSlug }: BrandCarGridProps) {
           <h3 className="font-heading text-xl font-bold mb-2">
             Coming Soon
           </h3>
-          <p className="text-neutral-400">
+          <p className="text-neutral-500">
             We are currently updating our fleet for this brand. Please contact us
             for availability.
           </p>
@@ -37,7 +37,7 @@ function BrandCarGrid({ brandSlug }: BrandCarGridProps) {
   return (
     <section className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-neutral-400 text-sm mb-6">
+        <p className="text-neutral-500 text-sm mb-6">
           {cars.length} {cars.length === 1 ? "car" : "cars"} available
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/ui/section-heading"
 import { Card } from "@/components/ui/card"
-import { UserCheck, IdCard, Truck } from "lucide-react"
+import { ShieldCheck, CreditCard, PackageCheck } from "lucide-react"
 
 type DocumentCardProps = {
   icon: React.ReactNode
@@ -15,25 +15,25 @@ function DocumentCard({ icon, title, description }: DocumentCardProps) {
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-neutral-400 text-sm">{description}</p>
+      <p className="text-neutral-500 text-sm">{description}</p>
     </Card>
   )
 }
 
 const DOCUMENT_CARDS = [
   {
-    icon: <UserCheck className="w-8 h-8 text-primary-500" />,
+    icon: <ShieldCheck className="w-8 h-8 text-primary-500" strokeWidth={1.5} />,
     title: "AGE",
     description: "You should be at least 21 years old.",
   },
   {
-    icon: <IdCard className="w-8 h-8 text-primary-500" />,
+    icon: <CreditCard className="w-8 h-8 text-primary-500" strokeWidth={1.5} />,
     title: "Driving License",
     description:
       "You should have a valid UAE driving license if you are UAE resident or You should have an International driving license.",
   },
   {
-    icon: <Truck className="w-8 h-8 text-primary-500" />,
+    icon: <PackageCheck className="w-8 h-8 text-primary-500" strokeWidth={1.5} />,
     title: "Free Delivery",
     description:
       "We offer a free delivery to our customers to their desired location.",

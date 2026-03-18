@@ -9,7 +9,7 @@ function Card({ className, children, ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-neutral-900 rounded-2xl border border-neutral-800",
+        "bg-surface rounded-2xl border border-neutral-800",
         className
       )}
       {...props}

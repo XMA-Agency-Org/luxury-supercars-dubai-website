@@ -21,7 +21,7 @@ function CTASection({
     <section className={cn("py-16 md:py-20", className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <SectionHeading className="mb-4">{title}</SectionHeading>
-        <p className="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto">
+        <p className="text-neutral-500 text-lg mb-8 max-w-2xl mx-auto">
           {description}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

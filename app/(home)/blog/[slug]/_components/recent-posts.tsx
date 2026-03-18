@@ -25,7 +25,7 @@ function RecentPosts({ posts }: RecentPostsProps) {
               <span className="font-medium group-hover:text-primary-500 transition-colors line-clamp-1 pr-4">
                 {post.title}
               </span>
-              <span className="text-neutral-500 text-sm shrink-0">
+              <span className="text-neutral-600 text-sm shrink-0">
                 {post.date}
               </span>
             </NextLink>

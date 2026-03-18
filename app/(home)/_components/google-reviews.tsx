@@ -27,8 +27,8 @@ function GoogleReviews({ googleReviews, className }: GoogleReviewsProps) {
               <StarIcon className="w-7 h-7 text-primary-500" />
             </div>
             <div className="text-left">
-              <p className="text-sm text-neutral-300">Based on 377 reviews</p>
-              <p className="text-xs text-neutral-500">powered by Google</p>
+              <p className="text-sm text-neutral-400">Based on 377 reviews</p>
+              <p className="text-xs text-neutral-600">powered by Google</p>
             </div>
           </div>
         </div>

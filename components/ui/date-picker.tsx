@@ -41,13 +41,13 @@ function DatePicker({
           type="button"
           disabled={disabled}
           className={cn(
-            "w-full rounded-lg bg-neutral-800/60 border border-neutral-700 px-4 py-2.5 text-sm text-left outline-none transition-all duration-200 focus:border-primary-500 cursor-pointer flex items-center gap-2",
-            value ? "text-neutral-50" : "text-neutral-500",
+            "w-full rounded-lg bg-neutral-900/60 border border-neutral-700 px-4 py-2.5 text-sm text-left outline-none transition-all duration-200 focus:border-primary-500 cursor-pointer flex items-center gap-2",
+            value ? "text-neutral-50" : "text-neutral-600",
             disabled && "opacity-50 cursor-not-allowed",
             className
           )}
         >
-          <CalendarIcon className="h-4 w-4 shrink-0 text-neutral-500" />
+          <CalendarIcon className="h-4 w-4 shrink-0 text-neutral-600" />
           {value ? formatDate(value) : placeholder}
         </button>
       </PopoverTrigger>

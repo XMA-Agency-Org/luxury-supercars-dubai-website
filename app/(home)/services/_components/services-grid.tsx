@@ -21,7 +21,7 @@ function ServicesGrid() {
                 <h3 className="font-heading text-xl font-semibold mb-3">
                   {service.title}
                 </h3>
-                <p className="text-neutral-400 leading-relaxed mb-6">
+                <p className="text-neutral-500 leading-relaxed mb-6">
                   {service.description}
                 </p>
                 <NextLink

@@ -54,7 +54,7 @@ function PageHero({
             )}
           </SectionHeading>
           {description && (
-            <p className="mt-6 text-lg text-neutral-400 leading-relaxed">
+            <p className="mt-6 text-lg text-neutral-500 leading-relaxed">
               {description}
             </p>
           )}

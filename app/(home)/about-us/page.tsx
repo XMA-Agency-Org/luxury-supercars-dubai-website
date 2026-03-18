@@ -29,7 +29,7 @@ export default function AboutPage() {
             {aboutIntro.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-neutral-400 leading-relaxed text-lg"
+                className="text-neutral-500 leading-relaxed text-lg"
               >
                 {paragraph}
               </p>

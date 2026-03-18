@@ -8,7 +8,7 @@ All primitive components live in `components/ui/` and are built with [class-vari
 
 Colors reference the Tailwind `@theme` tokens defined in `app/globals.css`:
 - **primary-***: Gold scale (oklch hue 80)
-- **neutral-***: Cool gray scale (oklch achromatic)
+- **neutral-***: Warm dark scale (oklch hue 60, standard: 50=lightest, 950=darkest)
 - **success-***: Green scale (oklch hue 142)
 
 Font families:
@@ -185,7 +185,7 @@ All layout components live in `components/layout/` and are shared across every r
 `"use client"` floating widget fixed to the **bottom-right** corner.
 
 - Default state: green circular button (bg-success-500) with WhatsAppIcon, 56px.
-- Expanded state: chat panel (w-80, bg-neutral-900, rounded-2xl) with a success-600 header, descriptive body text, and two agent cards (Aleona/Russian and Ryan/English) that link to the WhatsApp API.
+- Expanded state: chat panel (w-80, bg-surface, rounded-2xl) with a success-600 header, descriptive body text, and two agent cards (Aleona/Russian and Ryan/English) that link to the WhatsApp API.
 - Panel animates with `transition-all`, `scale`, and `opacity` from `origin-bottom-right`.
 - Agent data sourced from `contactData.whatsapp` in `app/(home)/_lib/contact-data.ts`.
 
@@ -210,7 +210,7 @@ All layout components live in `components/layout/` and are shared across every r
 
 `"use client"` sticky header component.
 
-- `sticky top-0 z-50` with `bg-neutral-950/95 backdrop-blur-md` and subtle bottom border. No `overflow-hidden` on any ancestor to preserve sticky behavior.
+- `sticky top-0 z-50` with `bg-surface/95 backdrop-blur-md` and subtle bottom border. No `overflow-hidden` on any ancestor to preserve sticky behavior.
 - Max-width container (`max-w-7xl mx-auto`).
 - Three-section layout: Logo (left), DesktopNav (center, hidden below `lg`), phone + socials (right, hidden below `lg`), hamburger (mobile only).
 - Mobile menu is rendered as a sibling (not nested inside the header) to avoid stacking context issues.
@@ -221,9 +221,9 @@ Sub-components in `components/layout/_components/`:
 | Component | File | Description |
 |-----------|------|-------------|
 | `DesktopNav` | `desktop-nav.tsx` | `"use client"` horizontal nav with hover-activated dropdowns. Each `DesktopNavItem` manages its own hover state for showing `DropdownPanel`. |
-| `DropdownPanel` | `dropdown-panel.tsx` | Absolutely positioned grid of icon + label links. Positioned below nav item with opacity/translate animation. `bg-neutral-900`, `rounded-xl`, `border-neutral-800`. |
+| `DropdownPanel` | `dropdown-panel.tsx` | Absolutely positioned grid of icon + label links. Positioned below nav item with opacity/translate animation. `bg-neutral-900`, `rounded-xl`, `border-neutral-800`. | |
 | `MobileMenu` | `mobile-menu.tsx` | `"use client"` full-screen fixed overlay (`z-50`). Accordion-style dropdown sections with `grid-rows` animation. Includes phone link and social icons at bottom. |
-| `HeaderSocials` | `header-socials.tsx` | Row of social icon links (FB, IG, YT, TikTok) with `text-neutral-400 hover:text-primary-500`. |
+| `HeaderSocials` | `header-socials.tsx` | Row of social icon links (FB, IG, YT, TikTok) with `text-neutral-500 hover:text-primary-500`. |
 | `PhoneLink` | `phone-link.tsx` | Phone icon + number styled as `text-primary-500`. Reusable anchor element. |
 
 **Exports:** `Header`
@@ -234,7 +234,7 @@ Sub-components in `components/layout/_components/`:
 
 Server component (no `"use client"`).
 
-- `bg-neutral-900` with generous vertical padding.
+- `bg-neutral-900` (dark surface) with generous vertical padding.
 - Max-width container (`max-w-7xl mx-auto`).
 - Three-column grid on desktop (`lg:grid-cols-3`), single column on mobile.
   - Column 1: Logo, company description, social icon links.
@@ -339,7 +339,7 @@ CVA wrapper for contact info icon circles.
 | variant | `muted`, `solid` | `muted` |
 
 - `muted`: `bg-primary-500/10 text-primary-500` (used in contact-info-bar)
-- `solid`: `bg-primary-500 text-neutral-950` (used in contact-section)
+- `solid`: `bg-primary-500 text-neutral-50` (used in contact-section)
 
 **Exports:** `ContactIconCircle`, `contactIconCircleVariants`
 

@@ -10,11 +10,11 @@ const iconButtonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary-500 text-neutral-950 hover:bg-primary-400 active:bg-primary-600",
+          "bg-primary-500 text-neutral-50 hover:bg-primary-400 active:bg-primary-600",
         whatsapp:
-          "bg-success-500 text-neutral-50 hover:bg-success-400 active:bg-success-600",
+          "bg-success-500 text-white hover:bg-success-400 active:bg-success-600",
         call:
-          "bg-success-500 text-neutral-50 hover:bg-success-400 active:bg-success-600",
+          "bg-success-500 text-white hover:bg-success-400 active:bg-success-600",
       },
       size: {
         sm: "w-10 h-10",

@@ -12,7 +12,7 @@ function BusinessHours() {
           <Clock className="w-6 h-6 text-primary-500" />
           <SectionHeading>Business Hours</SectionHeading>
         </div>
-        <div className="max-w-xl rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+        <div className="max-w-xl rounded-2xl border border-neutral-800 bg-surface p-6">
           <div className="space-y-3">
             {businessHours.map((item) => (
               <div
@@ -20,7 +20,7 @@ function BusinessHours() {
                 className={`flex items-center justify-between py-2 px-3 rounded-lg ${
                   item.day === today
                     ? "bg-primary-500/10 text-primary-500"
-                    : "text-neutral-400"
+                    : "text-neutral-500"
                 }`}
               >
                 <span className="font-medium">{item.day}</span>

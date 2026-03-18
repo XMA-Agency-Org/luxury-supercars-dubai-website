@@ -73,7 +73,7 @@ function MobileDropdownSection({
               <NextLink
                 key={dropdownItem.href}
                 href={dropdownItem.href}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors duration-150 hover:bg-neutral-800"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors duration-150 hover:bg-neutral-900"
               >
                 {dropdownItem.iconPath && (
                   <Image
@@ -84,7 +84,7 @@ function MobileDropdownSection({
                     className="w-6 h-6 object-contain"
                   />
                 )}
-                <span className="text-sm text-neutral-300 font-cta">
+                <span className="text-sm text-neutral-400 font-cta">
                   {dropdownItem.label}
                 </span>
               </NextLink>
@@ -169,7 +169,7 @@ export function MobileMenu({
                 href={socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors duration-200 hover:text-primary-500"
+                className="text-neutral-500 transition-colors duration-200 hover:text-primary-500"
               >
                 <FacebookIcon />
               </a>
@@ -177,7 +177,7 @@ export function MobileMenu({
                 href={socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors duration-200 hover:text-primary-500"
+                className="text-neutral-500 transition-colors duration-200 hover:text-primary-500"
               >
                 <InstagramIcon />
               </a>
@@ -185,7 +185,7 @@ export function MobileMenu({
                 href={socials.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors duration-200 hover:text-primary-500"
+                className="text-neutral-500 transition-colors duration-200 hover:text-primary-500"
               >
                 <YouTubeIcon />
               </a>
@@ -193,7 +193,7 @@ export function MobileMenu({
                 href={socials.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-400 transition-colors duration-200 hover:text-primary-500"
+                className="text-neutral-500 transition-colors duration-200 hover:text-primary-500"
               >
                 <TikTokIcon />
               </a>

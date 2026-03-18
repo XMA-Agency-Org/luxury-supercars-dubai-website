@@ -21,7 +21,7 @@ function Breadcrumbs({ items, className }: BreadcrumbsProps) {
       >
         <NextLink
           href="/"
-          className="text-neutral-400 hover:text-primary-500 transition-colors"
+          className="text-neutral-500 hover:text-primary-500 transition-colors"
           aria-label="Home"
         >
           <Home className="w-4 h-4" />
@@ -29,11 +29,11 @@ function Breadcrumbs({ items, className }: BreadcrumbsProps) {
 
         {items.map((item, index) => (
           <span key={index} className="flex items-center gap-2">
-            <ChevronRight className="w-4 h-4 text-neutral-600" />
+            <ChevronRight className="w-4 h-4 text-neutral-400" />
             {item.href ? (
               <NextLink
                 href={item.href}
-                className="text-neutral-400 hover:text-primary-500 transition-colors"
+                className="text-neutral-500 hover:text-primary-500 transition-colors"
               >
                 {item.label}
               </NextLink>

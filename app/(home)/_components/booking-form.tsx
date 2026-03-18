@@ -18,7 +18,7 @@ function BookingForm() {
   today.setHours(0, 0, 0, 0)
 
   return (
-    <div className="w-full rounded-2xl border border-neutral-800 bg-neutral-900/50 backdrop-blur-lg p-6 md:p-8">
+    <div className="w-full rounded-2xl border border-neutral-800 bg-surface/85 backdrop-blur-lg p-6 md:p-8">
       <p className="text-sm font-medium text-primary-500">Book Now</p>
       <h2 className="font-heading text-2xl font-bold text-neutral-50 mt-1 mb-6">
         Need to Rent a Luxury Car?

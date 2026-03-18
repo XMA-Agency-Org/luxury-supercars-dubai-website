@@ -15,14 +15,14 @@ function ContactInfoCards() {
             <a
               key={phone.href}
               href={phone.href}
-              className="block text-neutral-400 hover:text-primary-500 transition-colors"
+              className="block text-neutral-500 hover:text-primary-500 transition-colors"
             >
               {phone.label}
             </a>
           ))}
           <a
             href={contactData.landline.href}
-            className="block text-neutral-400 hover:text-primary-500 transition-colors"
+            className="block text-neutral-500 hover:text-primary-500 transition-colors"
           >
             {contactData.landline.label}
           </a>
@@ -37,7 +37,7 @@ function ContactInfoCards() {
           <h3 className="font-heading text-lg font-semibold mb-2">Email</h3>
           <a
             href={contactData.email.href}
-            className="text-neutral-400 hover:text-primary-500 transition-colors"
+            className="text-neutral-500 hover:text-primary-500 transition-colors"
           >
             {contactData.email.label}
           </a>
@@ -54,7 +54,7 @@ function ContactInfoCards() {
             href={contactData.address.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-400 hover:text-primary-500 transition-colors"
+            className="text-neutral-500 hover:text-primary-500 transition-colors"
           >
             {contactData.address.label}
           </a>

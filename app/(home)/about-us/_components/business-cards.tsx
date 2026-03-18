@@ -26,7 +26,7 @@ function BusinessCards() {
                 <h3 className="font-heading text-lg font-semibold mb-2">
                   {card.title}
                 </h3>
-                <p className="text-neutral-400 text-sm">{card.description}</p>
+                <p className="text-neutral-500 text-sm">{card.description}</p>
               </div>
             </Card>
           ))}

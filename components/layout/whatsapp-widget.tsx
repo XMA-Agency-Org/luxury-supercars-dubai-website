@@ -50,11 +50,11 @@ function AgentCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-between gap-3 rounded-xl bg-neutral-800 px-4 py-3 transition-colors hover:bg-neutral-700"
+      className="flex items-center justify-between gap-3 rounded-xl bg-neutral-900 px-4 py-3 transition-colors hover:bg-neutral-800"
     >
       <div className="flex flex-col">
         <span className="text-sm font-medium text-neutral-50">{name}</span>
-        <span className="text-xs text-neutral-400">{language}</span>
+        <span className="text-xs text-neutral-500">{language}</span>
       </div>
       <WhatsAppIcon className="h-5 w-5 text-success-500" />
     </a>
@@ -74,14 +74,14 @@ export function WhatsAppWidget() {
             : "pointer-events-none scale-75 opacity-0"
         )}
       >
-        <div className="w-80 rounded-2xl bg-neutral-900 shadow-2xl">
+        <div className="w-80 rounded-2xl bg-surface shadow-2xl shadow-black/30">
           <div className="flex items-center justify-between rounded-t-2xl bg-success-600 px-5 py-4">
-            <h3 className="text-sm font-semibold text-neutral-50">
+            <h3 className="text-sm font-semibold text-white">
               Need Help? Chat with us
             </h3>
             <button
               onClick={() => setIsOpen(false)}
-              className="rounded-full p-1 text-neutral-50 transition-colors hover:bg-success-700"
+              className="rounded-full p-1 text-white transition-colors hover:bg-success-700"
               aria-label="Close chat panel"
             >
               <CloseIcon />
@@ -93,10 +93,10 @@ export function WhatsAppWidget() {
               <h4 className="text-base font-semibold text-neutral-50">
                 Start a Conversation
               </h4>
-              <p className="text-sm text-neutral-400">
+              <p className="text-sm text-neutral-500">
                 Hi! Click one of our member below to chat on WhatsApp
               </p>
-              <p className="text-xs text-neutral-500">
+              <p className="text-xs text-neutral-600">
                 The team typically replies in a few minutes.
               </p>
             </div>
@@ -117,7 +117,7 @@ export function WhatsAppWidget() {
 
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-success-500 text-neutral-50 shadow-lg transition-transform hover:scale-105"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-success-500 text-white shadow-lg transition-transform hover:scale-105"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close WhatsApp chat" : "Open WhatsApp chat"}
       >

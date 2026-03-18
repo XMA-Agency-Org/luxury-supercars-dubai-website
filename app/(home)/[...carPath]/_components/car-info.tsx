@@ -12,10 +12,7 @@ type CarInfoProps = {
 function CarInfo({ car }: CarInfoProps) {
   return (
     <div>
-      <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-        {car.name}
-      </h1>
-      <p className="text-neutral-400 leading-relaxed mb-8">{car.description}</p>
+      <p className="text-neutral-500 leading-relaxed mb-8">{car.description}</p>
 
       <h2 className="font-heading text-xl font-semibold mb-4">Specifications</h2>
       <div className="grid grid-cols-2 gap-4 mb-8">
@@ -60,7 +57,7 @@ function CarInfo({ car }: CarInfoProps) {
           <h2 className="font-heading text-xl font-semibold mb-4">Features</h2>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
             {car.features.map((feature) => (
-              <div key={feature} className="flex items-center gap-2 text-sm text-neutral-300">
+              <div key={feature} className="flex items-center gap-2 text-sm text-neutral-400">
                 <Check className="w-4 h-4 text-primary-500 shrink-0" />
                 {feature}
               </div>
@@ -82,10 +79,10 @@ function SpecCard({
   value: string
 }) {
   return (
-    <div className="rounded-xl border border-neutral-800 bg-neutral-900 p-4">
+    <div className="rounded-xl border border-neutral-800 bg-surface p-4">
       <div className="flex items-center gap-2 mb-2">
         {icon}
-        <span className="text-xs text-neutral-400 uppercase tracking-wider">
+        <span className="text-xs text-neutral-500 uppercase tracking-wider">
           {label}
         </span>
       </div>

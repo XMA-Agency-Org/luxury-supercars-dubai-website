@@ -14,7 +14,7 @@ function ArticleHero({ blog }: ArticleHeroProps) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <NextLink
           href="/blog"
-          className="inline-flex items-center gap-2 text-neutral-400 hover:text-primary-500 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-neutral-500 hover:text-primary-500 transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm">Back to Blog</span>
@@ -26,7 +26,7 @@ function ArticleHero({ blog }: ArticleHeroProps) {
               {blog.category}
             </Badge>
           )}
-          <div className="flex items-center gap-4 text-neutral-500">
+          <div className="flex items-center gap-4 text-neutral-600">
             <div className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
               <span className="text-xs">{blog.date}</span>
@@ -45,7 +45,7 @@ function ArticleHero({ blog }: ArticleHeroProps) {
         </h1>
 
         {blog.excerpt && (
-          <p className="text-lg text-neutral-400 leading-relaxed">
+          <p className="text-lg text-neutral-500 leading-relaxed">
             {blog.excerpt}
           </p>
         )}

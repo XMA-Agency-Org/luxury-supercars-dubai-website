@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const textareaVariants = cva(
-  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-500 outline-none transition-all duration-200 resize-none",
+  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-600 outline-none transition-all duration-200 resize-none",
   {
     variants: {
       variant: {
         default:
-          "bg-neutral-900/60 border border-neutral-700 text-neutral-50 focus:border-primary-500 focus:bg-neutral-900",
+          "bg-surface/60 border border-neutral-700 text-neutral-50 focus:border-primary-500 focus:bg-surface",
         light:
-          "bg-neutral-800/60 border border-neutral-700 text-neutral-50 focus:border-primary-500 focus:bg-neutral-800",
+          "bg-neutral-900/60 border border-neutral-700 text-neutral-50 focus:border-primary-500 focus:bg-neutral-900",
         surface:
-          "bg-white border border-neutral-300 text-neutral-950 placeholder:text-neutral-400 focus:border-primary-500",
+          "bg-surface border border-neutral-700 text-neutral-50 placeholder:text-neutral-500 focus:border-primary-500",
       },
     },
     defaultVariants: {

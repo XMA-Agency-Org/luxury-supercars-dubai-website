@@ -51,10 +51,10 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-2xl border border-neutral-800 bg-neutral-900 p-6 hover:border-primary-500 transition-colors"
+      className="block rounded-2xl border border-neutral-800 bg-surface p-6 hover:border-primary-500 transition-colors"
     >
       <h3 className="font-heading text-lg font-semibold mb-2">{platform}</h3>
-      <p className="text-neutral-400 text-sm">{description}</p>
+      <p className="text-neutral-500 text-sm">{description}</p>
     </a>
   )
 }

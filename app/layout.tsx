@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Epilogue, Roboto, Poppins } from "next/font/google"
+import { Epilogue, DM_Sans, Poppins } from "next/font/google"
 import "./globals.css"
 
 const epilogue = Epilogue({
@@ -9,10 +9,10 @@ const epilogue = Epilogue({
   display: "swap",
 })
 
-const roboto = Roboto({
+const dmSans = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 })
 
@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${epilogue.variable} ${roboto.variable} ${poppins.variable}`}
+        className={`${epilogue.variable} ${dmSans.variable} ${poppins.variable}`}
       >
         {children}
       </body>

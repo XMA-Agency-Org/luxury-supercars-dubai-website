@@ -3,59 +3,79 @@ import NextLink from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button-variants"
 import { BookingForm } from "./booking-form"
+import {
+  AnimatedHeroContent,
+  AnimatedHeroChild,
+  AnimatedBookingForm,
+  ScrollIndicator,
+} from "./animated-hero-content"
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] flex items-center">
+    <section id="hero-section" className="relative min-h-[85vh] flex items-center">
       <Image
-        src="/images/hero/hero-bg.webp"
+        src="/Hero-3.png"
         alt="Luxury supercar in Dubai"
         fill
         priority
         className="object-cover"
       />
 
-      <div className="absolute inset-0 bg-linear-to-r from-neutral-950 via-neutral-950/0 to-neutral-950" />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-          <div className="space-y-6">
-            <h1 className="font-heading text-4xl font-bold leading-tight text-neutral-50 md:text-5xl lg:text-6xl">
-              Are You Looking To Rent{" "}
-              <span className="text-primary-500">Luxury</span> Car In{" "}
-              <span className="text-primary-500">Dubai?</span>
-            </h1>
+          <AnimatedHeroContent>
+            <AnimatedHeroChild className="drop-shadow-[0_2px_12px_oklch(0.15_0_0/0.6)]">
+              <h1 className="font-heading text-5xl font-bold tracking-tight leading-[1.05] text-white md:text-6xl lg:text-7xl">
+                Rent a{" "}
+                <span className="text-primary-400">Luxury</span> Car in{" "}
+                <span className="text-primary-400">Dubai</span>
+              </h1>
+            </AnimatedHeroChild>
 
-            <p className="max-w-xl text-lg leading-relaxed text-neutral-300">
-              Dubai&apos;s Most Trusted Supercar Rentals. Premium Services with
-              24/7 Support and Free Delivery Across Dubai.
-            </p>
+            <AnimatedHeroChild>
+              <p className="max-w-xl text-lg leading-relaxed text-white/80 mt-6">
+                Dubai&apos;s Most Trusted Supercar Rentals. Premium Services with
+                24/7 Support and Free Delivery Across Dubai.
+              </p>
+            </AnimatedHeroChild>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <NextLink
-                href="/our-fleet"
-                className={cn(buttonVariants({ intent: "primary", size: "lg" }))}
-              >
-                Rent A Car
-              </NextLink>
-              <NextLink
-                href="/contact-us"
-                className={cn(
-                  buttonVariants({ intent: "secondary", size: "lg" })
-                )}
-              >
-                Contact Us
-              </NextLink>
-            </div>
-          </div>
+            <AnimatedHeroChild>
+              <div className="flex flex-wrap gap-4 pt-2 mt-6">
+                <NextLink
+                  href="/our-fleet"
+                  className={cn(buttonVariants({ intent: "primary", size: "lg" }))}
+                >
+                  Rent A Car
+                </NextLink>
+                <NextLink
+                  href="/contact-us"
+                  className={cn(
+                    buttonVariants({ intent: "secondary", size: "lg" }),
+                    "border-white/40 text-white hover:border-primary-500 hover:text-primary-500"
+                  )}
+                >
+                  Contact Us
+                </NextLink>
+              </div>
+            </AnimatedHeroChild>
+          </AnimatedHeroContent>
 
           <div className="flex justify-end">
             <div className="w-full max-w-md">
-              <BookingForm />
+              <AnimatedBookingForm>
+                <BookingForm />
+              </AnimatedBookingForm>
             </div>
           </div>
         </div>
       </div>
+
+      <ScrollIndicator />
     </section>
   )
 }

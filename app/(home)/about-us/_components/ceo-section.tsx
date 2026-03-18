@@ -25,7 +25,7 @@ function CeoSection() {
             <p className="text-primary-500 font-medium mb-4">
               {ceoSection.title}
             </p>
-            <p className="text-neutral-400 leading-relaxed">
+            <p className="text-neutral-500 leading-relaxed">
               {ceoSection.description}
             </p>
           </div>

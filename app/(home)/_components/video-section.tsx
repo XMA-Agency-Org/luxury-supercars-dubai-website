@@ -54,7 +54,7 @@ function ValuePropositionItem({ title, description }: ValueProposition) {
       </div>
       <p className="text-sm leading-relaxed">
         <span className="text-neutral-50 font-semibold">{title}</span>{" "}
-        <span className="text-neutral-400">{description}</span>
+        <span className="text-neutral-500">{description}</span>
       </p>
     </div>
   )
