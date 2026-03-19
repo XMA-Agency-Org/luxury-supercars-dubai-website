@@ -7,7 +7,11 @@ import { FormField } from "@/components/ui/form-field"
 import { DatePicker } from "@/components/ui/date-picker"
 import { PhoneInput } from "@/components/ui/phone-input"
 
-function BookingForm() {
+type BookingFormProps = {
+  variant?: "card" | "embedded"
+}
+
+function BookingForm({ variant = "card" }: BookingFormProps) {
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
@@ -17,12 +21,18 @@ function BookingForm() {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
 
+  const isCard = variant === "card"
+
   return (
-    <div className="w-full rounded-2xl border border-neutral-800 bg-surface/85 backdrop-blur-lg p-6 md:p-8">
-      <p className="text-sm font-medium text-primary-500">Book Now</p>
-      <h2 className="font-heading text-2xl font-bold text-neutral-50 mt-1 mb-6">
-        Need to Rent a Luxury Car?
-      </h2>
+    <div className={isCard ? "w-full rounded-2xl border border-neutral-800 bg-surface/85 backdrop-blur-lg p-6 md:p-8" : ""}>
+      {isCard && (
+        <>
+          <p className="text-sm font-medium text-primary-500">Book Now</p>
+          <h2 className="font-heading text-2xl font-bold text-neutral-50 mt-1 mb-6">
+            Need to Rent a Luxury Car?
+          </h2>
+        </>
+      )}
 
       <div className="space-y-4">
         <FormField label="Full Name">

@@ -74,6 +74,8 @@
 - `RevealOnScroll` — scroll-triggered fade-up animation wrapper (respects prefers-reduced-motion)
 - `StaggerChildren` / `StaggerItem` — parent-child stagger animation system
 - `AnimatedHeroContent` / `AnimatedHeroChild` / `AnimatedBookingForm` / `ScrollIndicator` — hero section motion components
+- `BookingBottomSheet` — mobile slide-up drawer for booking form (Framer Motion, drag-to-dismiss, portal)
+- `MobileBookingTrigger` — "Book Now" button + bottom sheet state (mobile only, lg:hidden)
 
 ## Current State
 - Homepage with hero, car categories, about, brands, reviews, video, blog, FAQ, contact, Instagram

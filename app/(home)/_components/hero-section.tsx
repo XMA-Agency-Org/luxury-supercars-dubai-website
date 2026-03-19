@@ -9,16 +9,24 @@ import {
   AnimatedBookingForm,
   ScrollIndicator,
 } from "./animated-hero-content"
+import { MobileBookingTrigger } from "./mobile-booking-trigger"
 
 function HeroSection() {
   return (
-    <section id="hero-section" className="relative min-h-[85vh] flex items-center">
+    <section id="hero-section" className="relative min-h-[100dvh] lg:min-h-[85vh] flex items-center">
+      <Image
+        src="/hero-mobile.jpg"
+        alt="Luxury supercar in Dubai"
+        fill
+        priority
+        className="object-cover lg:hidden"
+      />
       <Image
         src="/Hero-3.png"
         alt="Luxury supercar in Dubai"
         fill
         priority
-        className="object-cover"
+        className="object-cover hidden lg:block"
       />
 
       <div
@@ -46,9 +54,12 @@ function HeroSection() {
 
             <AnimatedHeroChild>
               <div className="flex flex-wrap gap-4 pt-2 mt-6">
+                <div className="lg:hidden">
+                  <MobileBookingTrigger />
+                </div>
                 <NextLink
                   href="/our-fleet"
-                  className={cn(buttonVariants({ intent: "primary", size: "lg" }))}
+                  className={cn(buttonVariants({ intent: "primary", size: "lg" }), "hidden lg:inline-flex")}
                 >
                   Rent A Car
                 </NextLink>
@@ -65,7 +76,7 @@ function HeroSection() {
             </AnimatedHeroChild>
           </AnimatedHeroContent>
 
-          <div className="flex justify-end">
+          <div className="hidden lg:flex justify-end">
             <div className="w-full max-w-md">
               <AnimatedBookingForm>
                 <BookingForm />
