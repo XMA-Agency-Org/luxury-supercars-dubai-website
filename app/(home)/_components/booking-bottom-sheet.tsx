@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useCallback } from "react"
+import { useEffect, useCallback, useState } from "react"
 import { createPortal } from "react-dom"
 import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { BookingForm } from "./booking-form"
@@ -14,6 +14,11 @@ const sheetEasing = [0.22, 1, 0.36, 1] as const
 
 function BookingBottomSheet({ isOpen, onClose }: BookingBottomSheetProps) {
   const shouldReduceMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (isOpen) {
@@ -61,6 +66,8 @@ function BookingBottomSheet({ isOpen, onClose }: BookingBottomSheetProps) {
         exit: { opacity: 0 },
         transition: { duration: 0.3 },
       }
+
+  if (!mounted) return null
 
   return createPortal(
     <AnimatePresence>

@@ -43,7 +43,6 @@ export default function HomePage() {
           cars={sportsCars}
           viewAllHref="/rent-sports-cars-dubai"
           viewAllLabel="View All Sports Cars"
-          layout="featured"
         />
       </RevealOnScroll>
 

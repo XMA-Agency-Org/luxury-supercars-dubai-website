@@ -5,7 +5,6 @@ import NextLink from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { SectionHeading } from "@/components/ui/section-heading"
 import { Button } from "@/components/ui/button"
-import { StaggerChildren, StaggerItem } from "@/components/ui/stagger-children"
 import { CarCard } from "./car-card"
 import type { CarListing } from "../_types/car"
 
@@ -17,7 +16,7 @@ type CarCategorySectionProps = {
   cars: CarListing[]
   viewAllHref: string
   viewAllLabel: string
-  layout?: "default" | "featured" | "reversed"
+  layout?: "default" | "reversed"
   backgroundVariant?: "default" | "alternate"
 }
 
@@ -34,9 +33,7 @@ export function CarCategorySection({
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
 
-  const visibleCars = cars.slice(0, MAX_VISIBLE_CARS)
-  const featuredCar = layout === "featured" ? visibleCars[0] : null
-  const scrollCars = layout === "featured" ? visibleCars.slice(1) : visibleCars
+  const scrollCars = cars.slice(0, MAX_VISIBLE_CARS)
 
   const updateScrollState = useCallback(() => {
     const el = scrollContainerRef.current
@@ -79,22 +76,12 @@ export function CarCategorySection({
       }
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className={isReversed ? "text-right" : ""}>
+        <div className={isReversed ? "md:text-right" : ""}>
           <SectionHeading>{title}</SectionHeading>
-          <p className={`text-neutral-400 max-w-3xl mt-4 ${isReversed ? "ml-auto" : ""}`}>
+          <p className={`text-neutral-400 max-w-3xl mt-4 ${isReversed ? "md:ml-auto" : ""}`}>
             {description}
           </p>
         </div>
-
-        {featuredCar && (
-          <StaggerChildren className="mt-8">
-            <StaggerItem>
-              <div className="aspect-[21/10] max-h-[420px]">
-                <CarCard car={featuredCar} />
-              </div>
-            </StaggerItem>
-          </StaggerChildren>
-        )}
 
         <div className="relative mt-8 group/carousel">
           <div
