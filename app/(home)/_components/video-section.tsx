@@ -1,5 +1,5 @@
 import { Check } from "lucide-react"
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { cn } from "@/lib/utils"
 
 type ValueProposition = {
@@ -66,10 +66,10 @@ function VideoSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         <VideoEmbed />
         <div className="space-y-6">
-          <SectionHeading>
+          <AnimatedSectionHeading>
             Why Choose{" "}
             <span className="text-primary-500">Luxury Supercars Dubai?</span>
-          </SectionHeading>
+          </AnimatedSectionHeading>
           <div className="space-y-5">
             {valuePropositions.map((proposition) => (
               <ValuePropositionItem

@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { ScrollVelocityRow } from "@/components/ui/scroll-velocity"
 import { ReviewCard } from "./review-card"
 import { StarIcon } from "@/components/icons/star-icon"
@@ -17,10 +17,10 @@ function GoogleReviews({ googleReviews, className }: GoogleReviewsProps) {
     <section className={cn("py-16", className)}>
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-10 flex flex-col items-center text-center">
-          <SectionHeading>
+          <AnimatedSectionHeading>
             What Our <span className="text-primary-500">Customers</span> are
             Saying <span className="text-primary-500">About Us</span>
-          </SectionHeading>
+          </AnimatedSectionHeading>
           <div className="mt-4 flex items-center gap-3">
             <div className="flex items-center gap-1.5">
               <span className="text-4xl font-bold text-primary-500">4.9</span>

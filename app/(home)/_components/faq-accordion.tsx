@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { Link } from "@/components/ui/link"
 import { FaqItem } from "./faq-item"
 import { faqItems as defaultFaqItems, type FaqItem as FaqItemType } from "../_lib/faq-data"
@@ -21,14 +21,14 @@ function FaqAccordion({
 }: FaqAccordionProps) {
   return (
     <section className={cn("max-w-7xl mx-auto px-4 py-16", className)}>
-      <SectionHeading className="mb-10">
+      <AnimatedSectionHeading className="mb-10">
         {title ?? (
           <>
             <span className="text-primary-500">Everything</span> You Need To Know
             About Our <span className="text-primary-500">Services</span>
           </>
         )}
-      </SectionHeading>
+      </AnimatedSectionHeading>
       <div className="max-w-3xl mx-auto">
         {items.map((item, index) => (
           <FaqItem

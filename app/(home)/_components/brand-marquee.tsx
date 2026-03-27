@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import NextLink from "next/link"
+import { ScrollVelocityRow } from "@/components/ui/scroll-velocity"
 import type { Brand } from "../_lib/brand-data"
 
 type BrandMarqueeProps = {
@@ -10,7 +13,7 @@ function BrandLogo({ brand }: { brand: Brand }) {
   return (
     <NextLink
       href={brand.href}
-      className="flex-shrink-0 w-24 h-16 relative block"
+      className="flex-shrink-0 w-24 h-16 relative block mx-6"
     >
       <Image
         src={brand.logoPath}
@@ -26,18 +29,13 @@ function BrandLogo({ brand }: { brand: Brand }) {
 export function BrandMarquee({ brands }: BrandMarqueeProps) {
   return (
     <section className="w-full py-12 bg-neutral-900/80">
-      <div className="overflow-hidden">
-        <div className="flex gap-12 animate-marquee hover:[animation-play-state:paused]">
+      <ScrollVelocityRow baseVelocity={3} direction={1}>
+        <div className="flex items-center">
           {brands.map((brand) => (
-            <BrandLogo key={`first-${brand.name}`} brand={brand} />
+            <BrandLogo key={brand.name} brand={brand} />
           ))}
-          <div aria-hidden="true" className="contents">
-            {brands.map((brand) => (
-              <BrandLogo key={`second-${brand.name}`} brand={brand} />
-            ))}
-          </div>
         </div>
-      </div>
+      </ScrollVelocityRow>
     </section>
   )
 }

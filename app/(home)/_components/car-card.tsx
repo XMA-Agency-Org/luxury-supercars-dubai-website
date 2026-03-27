@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon"
+import { TiltCard } from "@/components/ui/tilt-card"
 import { useCurrency } from "../_lib/currency-context"
 import type { CarListing } from "../_types/car"
 
@@ -23,6 +24,7 @@ export function CarCard({ car }: CarCardProps) {
   )
 
   return (
+    <TiltCard>
     <NextLink href={car.href} className="group">
       <Card className="flex flex-col h-full transition-all duration-300 group-hover:border-primary-500 group-hover:-translate-y-1.5 group-hover:shadow-xl group-hover:shadow-black/30">
         <div className="relative aspect-[16/10] overflow-hidden rounded-t-2xl">
@@ -83,6 +85,7 @@ export function CarCard({ car }: CarCardProps) {
         </div>
       </Card>
     </NextLink>
+    </TiltCard>
   )
 }
 

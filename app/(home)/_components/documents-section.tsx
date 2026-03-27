@@ -1,4 +1,4 @@
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { Card } from "@/components/ui/card"
 import { ShieldCheck, CreditCard, PackageCheck } from "lucide-react"
 
@@ -43,10 +43,10 @@ const DOCUMENT_CARDS = [
 export function DocumentsSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
-      <SectionHeading className="text-center mb-10">
+      <AnimatedSectionHeading className="text-center mb-10">
         What <strong className="text-primary-500">documents</strong> Are Needed
         To <strong className="text-primary-500">Rent</strong> A Car in Dubai
-      </SectionHeading>
+      </AnimatedSectionHeading>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {DOCUMENT_CARDS.map((card) => (

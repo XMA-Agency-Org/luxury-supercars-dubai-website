@@ -1,19 +1,58 @@
+"use client"
+
+import { useRef } from "react"
 import Image from "next/image"
 import { Instagram } from "lucide-react"
+import { gsap, useGSAP } from "@/lib/gsap"
 import { Link } from "@/components/ui/link"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { instagramPosts } from "../_lib/instagram-data"
 import { contactData } from "../_lib/contact-data"
-import { SectionHeading } from "@/components/ui/section-heading"
 
 function InstagramFeed() {
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+      if (prefersReduced) return
+
+      const items = gridRef.current?.querySelectorAll(".insta-item")
+      if (!items?.length) return
+
+      const centerIndex = Math.floor(items.length / 2)
+      const ordered = Array.from(items).sort(
+        (a, b) =>
+          Math.abs(Array.from(items).indexOf(a) - centerIndex) -
+          Math.abs(Array.from(items).indexOf(b) - centerIndex)
+      )
+
+      gsap.from(ordered, {
+        scale: 0.8,
+        opacity: 0,
+        stagger: 0.06,
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      })
+    },
+    { scope: gridRef }
+  )
+
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading className="mb-10">
+        <AnimatedSectionHeading className="mb-10">
           Follow Us on <span className="text-primary-500">Instagram</span>
-        </SectionHeading>
+        </AnimatedSectionHeading>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+        <div ref={gridRef} className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {instagramPosts.map((post) => (
             <a
               key={post.href}
@@ -21,7 +60,7 @@ function InstagramFeed() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={post.caption}
-              className="group relative aspect-square overflow-hidden rounded-xl"
+              className="insta-item group relative aspect-square overflow-hidden rounded-xl will-change-transform"
             >
               <Image
                 src={post.imagePath}

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import NextLink from "next/link"
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
+import { ImageReveal } from "@/components/ui/image-reveal"
 import { buttonVariants } from "@/components/ui/button-variants"
 import { cn } from "@/lib/utils"
 
@@ -9,12 +10,12 @@ function AboutSection() {
     <section className="py-16 md:py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col justify-center space-y-6">
-          <SectionHeading>
+          <AnimatedSectionHeading>
             Luxury <span className="text-primary-500">Supercars</span> Dubai:
             Your <span className="text-primary-500">Premier</span> Luxury Car
             Rental Service in{" "}
             <span className="text-primary-500">Dubai, UAE</span>
-          </SectionHeading>
+          </AnimatedSectionHeading>
 
           <p className="leading-relaxed text-neutral-400">
             When it comes to Luxury Car Rental in Dubai, Luxury Supercars Dubai
@@ -49,14 +50,14 @@ function AboutSection() {
           </div>
         </div>
 
-        <div className="relative min-h-[400px] lg:min-h-0">
+        <ImageReveal className="relative min-h-[400px] lg:min-h-0 rounded-2xl overflow-clip">
           <Image
             src="/images/about/showroom.webp"
             alt="Luxury Supercars Dubai showroom"
             fill
             className="rounded-2xl object-cover"
           />
-        </div>
+        </ImageReveal>
       </div>
     </section>
   )

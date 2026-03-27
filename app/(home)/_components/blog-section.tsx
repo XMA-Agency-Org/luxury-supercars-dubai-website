@@ -1,4 +1,4 @@
-import { SectionHeading } from "@/components/ui/section-heading"
+import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { BlogCard } from "./blog-card"
 import { blogPosts } from "../_lib/blog-data"
 
@@ -8,10 +8,10 @@ function BlogSection() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading className="mb-10">
+        <AnimatedSectionHeading className="mb-10">
           Stay <span className="text-primary-500">Informed</span> And Inspired
           For Your Next <span className="text-primary-500">Journey</span>
-        </SectionHeading>
+        </AnimatedSectionHeading>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <BlogCard post={featuredPost} featured />
