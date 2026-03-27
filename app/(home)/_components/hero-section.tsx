@@ -60,7 +60,7 @@ function HeroSection() {
       id="hero-section"
       className="relative min-h-[100dvh] lg:min-h-[85vh] flex items-center overflow-clip"
     >
-      <div ref={bgRef} className="absolute inset-0 will-change-transform">
+      <div ref={bgRef} className="absolute inset-x-0 top-0 h-[120%] will-change-transform">
         <Image
           src="/hero-mobile.jpg"
           alt="Luxury supercar in Dubai"
