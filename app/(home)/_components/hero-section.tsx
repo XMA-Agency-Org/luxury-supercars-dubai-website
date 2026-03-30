@@ -13,7 +13,6 @@ import {
   AnimatedHeroContent,
   AnimatedHeroChild,
   AnimatedBookingForm,
-  HeroTrustBadges,
   HeroParallaxWrapper,
   ScrollIndicator,
   type WordSegment,
@@ -119,8 +118,6 @@ function HeroSection() {
                 </div>
               </AnimatedHeroChild>
             </AnimatedHeroContent>
-
-            <HeroTrustBadges />
           </div>
 
           <div className="hidden lg:flex justify-end">

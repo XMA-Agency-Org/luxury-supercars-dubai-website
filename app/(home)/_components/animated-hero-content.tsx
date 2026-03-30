@@ -1,13 +1,13 @@
 "use client"
 
-import { type ReactNode, memo, useState, useEffect, useRef } from "react"
+import { type ReactNode, useState, useEffect, useRef, memo } from "react"
 import {
   motion,
   useReducedMotion,
   useScroll,
   useTransform,
 } from "motion/react"
-import { ChevronDown, Star, Car, Clock } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 const springConfig = { type: "spring" as const, stiffness: 120, damping: 24 }
@@ -20,8 +20,8 @@ const DESKTOP_SLIDES = [
 
 const MOBILE_SLIDES = [
   { src: "/hero-mobile.jpg", alt: "Red supercar on Dubai highway at golden hour" },
-  { src: "/Hero-ferarri-desert.png", alt: "Ferrari in Arabian desert dunes at golden hour" },
-  { src: "/hero-lambo.png", alt: "Lamborghini with palm trees and Burj Khalifa in Dubai" },
+  { src: "/hero-desert-mobile.png", alt: "Blue supercar between Arabian desert dunes at golden hour" },
+  { src: "/hero-marina-mobile.png", alt: "Black supercar on wet Dubai Marina boulevard at night" },
 ]
 
 const SLIDE_DURATION = 5000
@@ -230,64 +230,6 @@ function AnimatedBookingForm({ children }: { children: ReactNode }) {
   )
 }
 
-const TRUST_BADGES = [
-  { value: "4.9", label: "Google Rating", icon: Star },
-  { value: "500+", label: "Premium Cars", icon: Car },
-  { value: "24/7", label: "Concierge", icon: Clock },
-]
-
-const badgeVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      opacity: { duration: 0.25 },
-      y: springConfig,
-    },
-  },
-}
-
-const HeroTrustBadges = memo(function HeroTrustBadges() {
-  const shouldReduceMotion = useReducedMotion()
-
-  if (shouldReduceMotion) {
-    return (
-      <div className="flex flex-wrap gap-3 mt-8">
-        {TRUST_BADGES.map((badge) => (
-          <TrustBadgePill key={badge.label} badge={badge} />
-        ))}
-      </div>
-    )
-  }
-
-  return (
-    <motion.div
-      className="flex flex-wrap gap-3 mt-8"
-      initial="hidden"
-      animate="visible"
-      transition={{ staggerChildren: 0.12, delayChildren: 1.4 }}
-    >
-      {TRUST_BADGES.map((badge) => (
-        <motion.div key={badge.label} variants={badgeVariants}>
-          <TrustBadgePill badge={badge} />
-        </motion.div>
-      ))}
-    </motion.div>
-  )
-})
-
-function TrustBadgePill({ badge }: { badge: (typeof TRUST_BADGES)[number] }) {
-  const IconComponent = badge.icon
-  return (
-    <div className="flex items-center gap-2 rounded-full px-4 py-2 bg-white/[0.08] backdrop-blur-md border border-white/10">
-      <IconComponent className="w-4 h-4 text-primary-400" />
-      <span className="text-sm font-medium text-primary-400">{badge.value}</span>
-      <span className="text-sm text-neutral-300">{badge.label}</span>
-    </div>
-  )
-}
-
 function HeroParallaxWrapper({ children }: { children: ReactNode }) {
   const shouldReduceMotion = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
@@ -350,7 +292,6 @@ export {
   AnimatedHeroContent,
   AnimatedHeroChild,
   AnimatedBookingForm,
-  HeroTrustBadges,
   HeroParallaxWrapper,
   ScrollIndicator,
 }

@@ -19,7 +19,7 @@ function BrandLogo({ brand }: { brand: Brand }) {
         src={brand.logoPath}
         alt={brand.name}
         fill
-        className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+        className="object-contain"
         sizes="96px"
       />
     </NextLink>

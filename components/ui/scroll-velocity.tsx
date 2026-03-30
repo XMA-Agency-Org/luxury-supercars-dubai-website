@@ -9,7 +9,7 @@ import {
   useTransform,
   useVelocity,
 } from "motion/react"
-import React, { useContext, useEffect, useRef, useState } from "react"
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react"
 import type { MotionValue } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -90,6 +90,32 @@ function ScrollVelocityRowImpl({
   const isPageVisibleRef = useRef(true)
   const prefersReducedMotionRef = useRef(false)
 
+  const isDraggingRef = useRef(false)
+  const dragStartXRef = useRef(0)
+  const dragPrevXRef = useRef(0)
+  const dragVelocityRef = useRef(0)
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    isDraggingRef.current = true
+    dragStartXRef.current = e.clientX
+    dragPrevXRef.current = e.clientX
+    dragVelocityRef.current = 0
+    containerRef.current?.setPointerCapture(e.pointerId)
+  }, [])
+
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!isDraggingRef.current) return
+    const dx = e.clientX - dragPrevXRef.current
+    dragPrevXRef.current = e.clientX
+    dragVelocityRef.current = dx
+    baseX.set(baseX.get() - dx)
+  }, [baseX])
+
+  const handlePointerUp = useCallback((e: React.PointerEvent) => {
+    isDraggingRef.current = false
+    containerRef.current?.releasePointerCapture(e.pointerId)
+  }, [])
+
   useEffect(() => {
     const container = containerRef.current
     const block = blockRef.current
@@ -145,6 +171,16 @@ function ScrollVelocityRowImpl({
 
   useAnimationFrame((_, delta) => {
     if (!isInViewRef.current || !isPageVisibleRef.current) return
+
+    if (!isDraggingRef.current && Math.abs(dragVelocityRef.current) > 0.5) {
+      baseX.set(baseX.get() - dragVelocityRef.current)
+      dragVelocityRef.current *= 0.95
+    } else if (!isDraggingRef.current) {
+      dragVelocityRef.current = 0
+    }
+
+    if (isDraggingRef.current) return
+
     const dt = delta / 1000
     const vf = velocityFactor.get()
     const absVf = Math.min(5, Math.abs(vf))
@@ -166,7 +202,12 @@ function ScrollVelocityRowImpl({
   return (
     <div
       ref={containerRef}
-      className={cn("w-full overflow-hidden whitespace-nowrap", className)}
+      className={cn("w-full overflow-hidden whitespace-nowrap cursor-grab active:cursor-grabbing", className)}
+      style={{ touchAction: "pan-y" }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       {...props}
     >
       <motion.div
