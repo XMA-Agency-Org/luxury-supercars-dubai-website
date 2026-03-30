@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const textareaVariants = cva(
-  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-600 outline-none transition-all duration-200 resize-none",
+  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-600 outline-none transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] resize-none hover:border-neutral-600 focus-ring-inset disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {

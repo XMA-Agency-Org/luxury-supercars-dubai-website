@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const inputVariants = cva(
-  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-600 outline-none transition-all duration-200 [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:hover:opacity-80",
+  "w-full rounded-lg px-4 py-2.5 text-sm placeholder:text-neutral-600 outline-none transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] hover:border-neutral-600 focus-ring-inset disabled:opacity-50 disabled:cursor-not-allowed [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:hover:opacity-80",
   {
     variants: {
       variant: {

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import type { AnchorHTMLAttributes } from "react"
 
-const linkVariants = cva("transition-all duration-200 cursor-pointer", {
+const linkVariants = cva("transition-all duration-[var(--duration-slow)] ease-[var(--ease-out-expo)] cursor-pointer focus-ring rounded-sm", {
   variants: {
     variant: {
       primary:
@@ -11,7 +11,7 @@ const linkVariants = cva("transition-all duration-200 cursor-pointer", {
       nav:
         "text-neutral-50 hover:text-primary-500 font-cta font-medium",
       cta:
-        "inline-flex items-center justify-center bg-primary-500 text-on-primary rounded-full px-6 py-3 font-cta font-medium hover:bg-primary-400 active:bg-primary-600",
+        "inline-flex items-center justify-center btn-shiny text-on-primary rounded-full px-6 py-3 font-cta font-medium",
     },
   },
   defaultVariants: {

@@ -215,27 +215,37 @@ function CarFiltersSidebar({
         </Button>
       </div>
 
-      {isMobileOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div
-            className="absolute inset-0 bg-neutral-950/80"
-            onClick={() => setIsMobileOpen(false)}
-          />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface border-l border-neutral-800 p-6 overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="font-heading text-xl font-bold">Filters</h2>
-              <button
-                onClick={() => setIsMobileOpen(false)}
-                className="p-2 text-neutral-500 hover:text-neutral-50"
-                aria-label="Close filters"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            {filterContent}
+      <div
+        className={cn(
+          "fixed inset-0 z-50 lg:hidden transition-opacity duration-[var(--duration-slow)] ease-[var(--ease-out-expo)]",
+          isMobileOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        )}
+      >
+        <div
+          className="absolute inset-0 bg-neutral-950/80"
+          onClick={() => setIsMobileOpen(false)}
+        />
+        <div
+          className={cn(
+            "absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface border-l border-neutral-800 p-6 overflow-y-auto transition-transform duration-[var(--duration-slow)] ease-[var(--ease-out-expo)]",
+            isMobileOpen ? "translate-x-0" : "translate-x-full"
+          )}
+        >
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="font-heading text-xl font-bold">Filters</h2>
+            <button
+              onClick={() => setIsMobileOpen(false)}
+              className="p-2 text-neutral-500 hover:text-neutral-50"
+              aria-label="Close filters"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
+          {filterContent}
         </div>
-      )}
+      </div>
 
       <aside
         className={cn(
@@ -323,11 +333,16 @@ function FilterDropdown({
           )}
         />
       </button>
-      {isOpen && (
-        <div className="absolute left-0 right-0 z-50 mt-1 max-h-60 overflow-y-auto rounded-xl border border-neutral-800 bg-surface p-1 shadow-lg shadow-black/20">
-          {children}
-        </div>
-      )}
+      <div
+        className={cn(
+          "absolute left-0 right-0 z-50 mt-1 max-h-60 overflow-y-auto rounded-xl border border-neutral-800 bg-surface p-1 shadow-lg shadow-black/20 transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-expo)] origin-top",
+          isOpen
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-[0.96] pointer-events-none"
+        )}
+      >
+        {children}
+      </div>
     </div>
   )
 }

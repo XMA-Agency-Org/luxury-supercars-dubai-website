@@ -1,18 +1,18 @@
 import { cva } from "class-variance-authority"
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-lg font-cta font-medium cursor-pointer transition-all duration-200 tracking-wide uppercase",
+  "inline-flex items-center justify-center rounded-lg font-cta font-medium cursor-pointer tracking-wide uppercase focus-ring disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none",
   {
     variants: {
       intent: {
         primary:
-          "bg-primary-500 text-on-primary hover:bg-primary-400 active:bg-primary-600",
+          "btn-shiny text-on-primary",
         secondary:
-          "bg-transparent border border-neutral-700 text-neutral-50 hover:border-primary-500 hover:text-primary-500 active:bg-primary-500/10",
+          "btn-shiny-outline border border-neutral-700 text-neutral-50 hover:border-primary-500 hover:text-primary-500",
         success:
-          "bg-success-500 text-white hover:bg-success-400 active:bg-success-600",
+          "bg-success-500 text-white hover:bg-success-400 active:bg-success-600 transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] active:scale-[0.98]",
         ghost:
-          "bg-transparent text-neutral-50 hover:bg-neutral-900 active:bg-neutral-800",
+          "bg-transparent text-neutral-50 hover:bg-neutral-900 active:bg-neutral-800 transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-quart)] active:scale-[0.98]",
       },
       size: {
         sm: "px-4 py-2 text-xs",

@@ -12,10 +12,10 @@ export function DropdownPanel({ items, isVisible }: DropdownPanelProps) {
   return (
     <div
       className={cn(
-        "absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-200",
+        "absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-[var(--duration-normal)] ease-[var(--ease-out-expo)] origin-top",
         isVisible
-          ? "opacity-100 translate-y-0 pointer-events-auto"
-          : "opacity-0 -translate-y-2 pointer-events-none"
+          ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+          : "opacity-0 -translate-y-2 scale-[0.96] pointer-events-none"
       )}
     >
       <div className="bg-surface rounded-xl border border-neutral-800 shadow-lg shadow-black/20 p-4 max-w-full min-w-160">
