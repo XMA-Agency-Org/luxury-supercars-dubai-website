@@ -23,13 +23,13 @@ const contactInfoVariants = {
 }
 
 const contactItemVariants = {
-  hidden: { opacity: 0, x: -30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       opacity: { duration: 0.3 },
-      x: springConfig,
+      y: springConfig,
     },
   },
 }
@@ -210,12 +210,12 @@ function AnimatedFormCard() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{
         opacity: { duration: 0.3 },
-        x: { ...springConfig, delay: 0.15 },
+        y: { ...springConfig, delay: 0.15 },
       }}
     >
       <ContactFormCard />
