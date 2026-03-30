@@ -13,15 +13,15 @@ import Image from "next/image"
 const springConfig = { type: "spring" as const, stiffness: 120, damping: 24 }
 
 const DESKTOP_SLIDES = [
-  { src: "/images/hero/hero-bg.webp", alt: "Three supercars approaching on Dubai highway at sunset" },
   { src: "/Hero-ferarri-desert.png", alt: "Ferrari in Arabian desert dunes at golden hour" },
   { src: "/hero-lambo.png", alt: "Lamborghini with palm trees and Burj Khalifa in Dubai" },
+  { src: "/images/hero/hero-bg.webp", alt: "Three supercars approaching on Dubai highway at sunset" },
 ]
 
 const MOBILE_SLIDES = [
-  { src: "/hero-mobile.jpg", alt: "Red supercar on Dubai highway at golden hour" },
   { src: "/hero-desert-mobile.png", alt: "Blue supercar between Arabian desert dunes at golden hour" },
   { src: "/hero-marina-mobile.png", alt: "Black supercar on wet Dubai Marina boulevard at night" },
+  { src: "/hero-mobile.jpg", alt: "Red supercar on Dubai highway at golden hour" },
 ]
 
 const SLIDE_DURATION = 5000
