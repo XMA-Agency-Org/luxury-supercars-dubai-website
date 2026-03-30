@@ -1,5 +1,6 @@
 import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
 import { Card } from "@/components/ui/card"
+import { StaggerChildren, StaggerItem } from "@/components/ui/stagger-children"
 import { ShieldCheck, CreditCard, PackageCheck } from "lucide-react"
 
 type DocumentCardProps = {
@@ -48,16 +49,17 @@ export function DocumentsSection() {
         To <strong className="text-primary-500">Rent</strong> A Car in Dubai
       </AnimatedSectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.12}>
         {DOCUMENT_CARDS.map((card) => (
-          <DocumentCard
-            key={card.title}
-            icon={card.icon}
-            title={card.title}
-            description={card.description}
-          />
+          <StaggerItem key={card.title}>
+            <DocumentCard
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+            />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
     </section>
   )
 }

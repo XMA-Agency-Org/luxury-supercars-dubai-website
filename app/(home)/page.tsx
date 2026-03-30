@@ -59,18 +59,20 @@ export default function HomePage() {
         backgroundVariant="alternate"
       />
 
-      <CarCategorySection
-        title={
-          <>
-            <strong className="text-primary-500">Rent Luxury</strong> Cars in
-            Dubai
-          </>
-        }
-        description="Make your journey in Dubai unforgettable with our luxury car rental services. At Luxury Supercars Dubai, we specialize in providing a world-class fleet of high-end vehicles, perfect for those who value style, comfort, and performance."
-        cars={luxuryCars}
-        viewAllHref="/rent-luxury-cars-dubai"
-        viewAllLabel="View All Luxury Cars"
-      />
+      <RevealOnScroll>
+        <CarCategorySection
+          title={
+            <>
+              <strong className="text-primary-500">Rent Luxury</strong> Cars in
+              Dubai
+            </>
+          }
+          description="Make your journey in Dubai unforgettable with our luxury car rental services. At Luxury Supercars Dubai, we specialize in providing a world-class fleet of high-end vehicles, perfect for those who value style, comfort, and performance."
+          cars={luxuryCars}
+          viewAllHref="/rent-luxury-cars-dubai"
+          viewAllLabel="View All Luxury Cars"
+        />
+      </RevealOnScroll>
 
       <CarCategorySection
         title={
@@ -107,9 +109,7 @@ export default function HomePage() {
         <FaqAccordion />
       </RevealOnScroll>
 
-      <RevealOnScroll>
-        <ContactSection />
-      </RevealOnScroll>
+      <ContactSection />
 
       <InstagramFeed />
     </>

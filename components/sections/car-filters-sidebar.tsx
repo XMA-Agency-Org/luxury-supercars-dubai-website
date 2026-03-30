@@ -1,15 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { SlidersHorizontal, X } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { SlidersHorizontal, X, ChevronDown, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuChevron,
-} from "@/components/ui/dropdown-menu"
 import { carCategories } from "@/app/(home)/_lib/car-data"
 import { brands } from "@/app/(home)/_lib/brand-data"
 import { cn } from "@/lib/utils"
@@ -135,67 +128,77 @@ function CarFiltersSidebar({
       )}
 
       {showBrands && (
-        <div>
-          <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
-            Brand
-          </h4>
-          <DropdownMenu open={brandOpen} onOpenChange={setBrandOpen}>
-            <DropdownMenuTrigger className={brand !== null ? "text-primary-500" : undefined}>
-              <span>{selectedBrandLabel}</span>
-              <DropdownMenuChevron isOpen={brandOpen} />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem
-                isSelected={brand === null}
-                onSelect={() => updateFilters(category, null, priceRange)}
+        <FilterDropdown
+          title="Brand"
+          selectedLabel={selectedBrandLabel}
+          isOpen={brandOpen}
+          onToggle={() => {
+            setBrandOpen(!brandOpen)
+            setPriceOpen(false)
+          }}
+          onClose={() => setBrandOpen(false)}
+          hasSelection={brand !== null}
+        >
+          <DropdownOption
+            isSelected={brand === null}
+            onSelect={() => {
+              updateFilters(category, null, priceRange)
+              setBrandOpen(false)
+            }}
+          >
+            All Brands
+          </DropdownOption>
+          {brands.map((b) => {
+            const brandSlug = b.name.toLowerCase().replace(/ /g, "-")
+            return (
+              <DropdownOption
+                key={b.name}
+                isSelected={brand === brandSlug}
+                onSelect={() => {
+                  updateFilters(category, brandSlug, priceRange)
+                  setBrandOpen(false)
+                }}
               >
-                All Brands
-              </DropdownMenuItem>
-              {brands.map((b) => {
-                const brandSlug = b.name.toLowerCase().replace(/ /g, "-")
-                return (
-                  <DropdownMenuItem
-                    key={b.name}
-                    isSelected={brand === brandSlug}
-                    onSelect={() => updateFilters(category, brandSlug, priceRange)}
-                  >
-                    {b.name}
-                  </DropdownMenuItem>
-                )
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+                {b.name}
+              </DropdownOption>
+            )
+          })}
+        </FilterDropdown>
       )}
 
-      <div>
-        <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
-          Daily Price
-        </h4>
-        <DropdownMenu open={priceOpen} onOpenChange={setPriceOpen}>
-          <DropdownMenuTrigger className={priceRange !== null ? "text-primary-500" : undefined}>
-            <span>{selectedPriceLabel}</span>
-            <DropdownMenuChevron isOpen={priceOpen} />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem
-              isSelected={priceRange === null}
-              onSelect={() => updateFilters(category, brand, null)}
-            >
-              Any Price
-            </DropdownMenuItem>
-            {priceRanges.map((range) => (
-              <DropdownMenuItem
-                key={range.label}
-                isSelected={priceRange?.label === range.label}
-                onSelect={() => updateFilters(category, brand, range)}
-              >
-                {range.label}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
+      <FilterDropdown
+        title="Daily Price"
+        selectedLabel={selectedPriceLabel}
+        isOpen={priceOpen}
+        onToggle={() => {
+          setPriceOpen(!priceOpen)
+          setBrandOpen(false)
+        }}
+        onClose={() => setPriceOpen(false)}
+        hasSelection={priceRange !== null}
+      >
+        <DropdownOption
+          isSelected={priceRange === null}
+          onSelect={() => {
+            updateFilters(category, brand, null)
+            setPriceOpen(false)
+          }}
+        >
+          Any Price
+        </DropdownOption>
+        {priceRanges.map((range) => (
+          <DropdownOption
+            key={range.label}
+            isSelected={priceRange?.label === range.label}
+            onSelect={() => {
+              updateFilters(category, brand, range)
+              setPriceOpen(false)
+            }}
+          >
+            {range.label}
+          </DropdownOption>
+        ))}
+      </FilterDropdown>
     </div>
   )
 
@@ -262,6 +265,97 @@ function FilterGroup({
       </h4>
       <div className="space-y-1">{children}</div>
     </div>
+  )
+}
+
+function FilterDropdown({
+  title,
+  selectedLabel,
+  isOpen,
+  onToggle,
+  onClose,
+  hasSelection,
+  children,
+}: {
+  title: string
+  selectedLabel: string
+  isOpen: boolean
+  onToggle: () => void
+  onClose: () => void
+  hasSelection: boolean
+  children: React.ReactNode
+}) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    function handleClickOutside(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        onClose()
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [isOpen, onClose])
+
+  return (
+    <div ref={containerRef} className="relative">
+      <h4 className="text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
+        {title}
+      </h4>
+      <button
+        type="button"
+        onClick={onToggle}
+        className={cn(
+          "flex w-full items-center justify-between rounded-lg border border-neutral-700 bg-neutral-900/60 px-4 py-2.5 text-sm transition-colors",
+          "hover:border-neutral-400",
+          isOpen && "border-primary-500 bg-neutral-900",
+          hasSelection ? "text-primary-500" : "text-neutral-500"
+        )}
+      >
+        <span>{selectedLabel}</span>
+        <ChevronDown
+          className={cn(
+            "ml-auto h-4 w-4 shrink-0 transition-transform duration-200",
+            isOpen && "rotate-180"
+          )}
+        />
+      </button>
+      {isOpen && (
+        <div className="absolute left-0 right-0 z-50 mt-1 max-h-60 overflow-y-auto rounded-xl border border-neutral-800 bg-surface p-1 shadow-lg shadow-black/20">
+          {children}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function DropdownOption({
+  isSelected,
+  onSelect,
+  children,
+}: {
+  isSelected: boolean
+  onSelect: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={cn(
+        "relative flex w-full items-center rounded-lg px-3 py-2 text-sm transition-colors",
+        "hover:bg-neutral-900 hover:text-neutral-50",
+        isSelected
+          ? "bg-primary-500/10 text-primary-500"
+          : "text-neutral-500"
+      )}
+    >
+      {children}
+      {isSelected && <Check className="ml-auto h-4 w-4 text-primary-500" />}
+    </button>
   )
 }
 

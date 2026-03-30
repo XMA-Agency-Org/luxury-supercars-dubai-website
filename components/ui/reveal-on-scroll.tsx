@@ -10,8 +10,8 @@ type RevealOnScrollProps = {
 }
 
 const revealTransition = {
-  duration: 0.6,
-  ease: [0.22, 1, 0.36, 1] as const,
+  duration: 0.4,
+  ease: [0.32, 0.72, 0, 1] as const,
 }
 
 function RevealOnScroll({ children, delay = 0, className }: RevealOnScrollProps) {
@@ -23,9 +23,9 @@ function RevealOnScroll({ children, delay = 0, className }: RevealOnScrollProps)
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{ ...revealTransition, delay }}
       className={className}
     >

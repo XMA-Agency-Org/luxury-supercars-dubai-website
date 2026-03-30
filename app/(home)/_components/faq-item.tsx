@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Plus, Minus } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
+import { Plus } from "lucide-react"
 
 type FaqItemProps = {
   id: string
@@ -10,11 +10,21 @@ type FaqItemProps = {
   answer: string
 }
 
+const expandTransition = {
+  height: { duration: 0.3, ease: [0.32, 0.72, 0, 1] as const },
+  opacity: { duration: 0.2 },
+}
+
 function FaqItem({ id, question, answer }: FaqItemProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const shouldReduceMotion = useReducedMotion()
 
   const triggerId = `faq-trigger-${id}`
   const panelId = `faq-panel-${id}`
+
+  const transition = shouldReduceMotion
+    ? { height: { duration: 0 }, opacity: { duration: 0 } }
+    : expandTransition
 
   return (
     <div className="border-b border-neutral-800">
@@ -29,26 +39,30 @@ function FaqItem({ id, question, answer }: FaqItemProps) {
         <span className="text-neutral-50 font-medium text-left pr-4">
           {question}
         </span>
-        {isOpen ? (
-          <Minus className="w-5 h-5 text-primary-500 shrink-0" />
-        ) : (
-          <Plus className="w-5 h-5 text-primary-500 shrink-0" />
-        )}
+        <motion.span
+          animate={{ rotate: isOpen ? 45 : 0 }}
+          transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
+          className="shrink-0"
+        >
+          <Plus className="w-5 h-5 text-primary-500" />
+        </motion.span>
       </button>
-      <div
-        id={panelId}
-        role="region"
-        aria-labelledby={triggerId}
-        className={cn(
-          "grid transition-all duration-300 ease-in-out",
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        )}
-      >
-        <div className="overflow-hidden">
-          <p className="text-neutral-500 text-sm pb-5 leading-relaxed">
-            {answer}
-          </p>
-        </div>
+      <div id={panelId} role="region" aria-labelledby={triggerId}>
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={transition}
+              className="overflow-hidden"
+            >
+              <p className="text-neutral-500 text-sm pb-5 leading-relaxed">
+                {answer}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   )

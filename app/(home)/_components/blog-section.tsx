@@ -1,4 +1,5 @@
 import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
+import { StaggerChildren, StaggerItem } from "@/components/ui/stagger-children"
 import { BlogCard } from "./blog-card"
 import { blogPosts } from "../_lib/blog-data"
 
@@ -13,14 +14,18 @@ function BlogSection() {
           For Your Next <span className="text-primary-500">Journey</span>
         </AnimatedSectionHeading>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <BlogCard post={featuredPost} featured />
-          <div className="flex flex-col gap-6">
-            {remainingPosts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
-        </div>
+        <StaggerChildren className="grid grid-cols-1 gap-6 lg:grid-cols-2" staggerDelay={0.15}>
+          <StaggerItem>
+            <BlogCard post={featuredPost} featured />
+          </StaggerItem>
+          <StaggerItem>
+            <div className="flex flex-col gap-6">
+              {remainingPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+          </StaggerItem>
+        </StaggerChildren>
       </div>
     </section>
   )

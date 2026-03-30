@@ -39,9 +39,9 @@ const footerUsefulLinks = [
 ];
 
 const paymentMethods = [
-  { name: "Visa", src: "/images/payments/visa.png" },
-  { name: "Mastercard", src: "/images/payments/mastercard.png" },
-  { name: "Amex", src: "/images/payments/amex.png" },
+  { name: "Visa", src: "/images/payments/visa.svg" },
+  { name: "Mastercard", src: "/images/payments/mastercard.svg" },
+  { name: "Amex", src: "/images/payments/amex.svg" },
 ];
 
 const legalLinks = [

@@ -17,11 +17,14 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      opacity: { duration: 0.3 },
+      y: { type: "spring" as const, stiffness: 120, damping: 24 },
+    },
   },
 }
 
@@ -36,7 +39,7 @@ function StaggerChildren({ children, className, staggerDelay = 0.1 }: StaggerChi
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-100px" }}
       custom={staggerDelay}
       variants={containerVariants}
       className={className}

@@ -1,6 +1,7 @@
 import { Check } from "lucide-react"
 import { AnimatedSectionHeading } from "@/components/ui/animated-section-heading"
-import { cn } from "@/lib/utils"
+import { StaggerChildren, StaggerItem } from "@/components/ui/stagger-children"
+
 
 type ValueProposition = {
   title: string
@@ -70,15 +71,16 @@ function VideoSection() {
             Why Choose{" "}
             <span className="text-primary-500">Luxury Supercars Dubai?</span>
           </AnimatedSectionHeading>
-          <div className="space-y-5">
+          <StaggerChildren className="space-y-5" staggerDelay={0.1}>
             {valuePropositions.map((proposition) => (
-              <ValuePropositionItem
-                key={proposition.title}
-                title={proposition.title}
-                description={proposition.description}
-              />
+              <StaggerItem key={proposition.title}>
+                <ValuePropositionItem
+                  title={proposition.title}
+                  description={proposition.description}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </div>
     </section>

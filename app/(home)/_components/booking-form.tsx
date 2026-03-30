@@ -24,7 +24,7 @@ function BookingForm({ variant = "card" }: BookingFormProps) {
   const isCard = variant === "card"
 
   return (
-    <div className={isCard ? "w-full rounded-2xl border border-neutral-800 bg-surface/85 backdrop-blur-lg p-6 md:p-8" : ""}>
+    <div className={isCard ? "w-full rounded-2xl border border-white/10 bg-neutral-950/30 backdrop-blur-sm shadow-lg p-6 md:p-8" : ""}>
       {isCard && (
         <>
           <p className="text-sm font-medium text-primary-500">Book Now</p>

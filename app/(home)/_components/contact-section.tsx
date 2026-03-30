@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { motion, useReducedMotion } from "motion/react"
 import { Input } from "@/components/ui/input"
 import { Select } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
@@ -14,65 +15,106 @@ import { ContactIconCircle } from "./contact-icon-circle"
 import { BRAND_OPTIONS } from "../_lib/form-data"
 import { contactData } from "../_lib/contact-data"
 
+const springConfig = { type: "spring" as const, stiffness: 120, damping: 24 }
+
+const contactInfoVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+}
+
+const contactItemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      opacity: { duration: 0.3 },
+      x: springConfig,
+    },
+  },
+}
+
 function ContactInfo() {
+  const shouldReduceMotion = useReducedMotion()
+
+  const Wrapper = shouldReduceMotion ? "div" : motion.div
+  const Item = shouldReduceMotion ? "div" : motion.div
+
+  const wrapperProps = shouldReduceMotion
+    ? {}
+    : {
+        initial: "hidden" as const,
+        whileInView: "visible" as const,
+        viewport: { once: true, margin: "-100px" },
+        variants: contactInfoVariants,
+      }
+
+  const itemProps = shouldReduceMotion ? {} : { variants: contactItemVariants }
+
   return (
-    <div className="flex flex-col justify-center gap-10">
-      <div className="flex items-start gap-4">
-        <ContactIconCircle variant="solid">
-          <PhoneIcon className="w-5 h-5" />
-        </ContactIconCircle>
-        <div>
-          <h3 className="text-lg font-bold text-neutral-50">Phone</h3>
-          <p className="text-sm text-neutral-100 mt-1">
-            <a href={contactData.phones[0].href} className="hover:text-primary-500 transition-colors">
-              {contactData.phones[0].label}
-            </a>
-            {" – "}
-            <a href={contactData.phones[1].href} className="hover:text-primary-500 transition-colors">
-              {contactData.phones[1].label}
-            </a>
-          </p>
-          <p className="text-sm text-neutral-100">
-            Landline:{" "}
-            <a href={contactData.landline.href} className="hover:text-primary-500 transition-colors">
-              {contactData.landline.label}
-            </a>
-          </p>
+    <Wrapper className="flex flex-col justify-center gap-10" {...wrapperProps}>
+      <Item {...itemProps}>
+        <div className="flex items-start gap-4">
+          <ContactIconCircle variant="solid">
+            <PhoneIcon className="w-5 h-5" />
+          </ContactIconCircle>
+          <div>
+            <h3 className="text-lg font-bold text-neutral-50">Phone</h3>
+            <p className="text-sm text-neutral-100 mt-1">
+              <a href={contactData.phones[0].href} className="hover:text-primary-500 transition-colors">
+                {contactData.phones[0].label}
+              </a>
+              {" – "}
+              <a href={contactData.phones[1].href} className="hover:text-primary-500 transition-colors">
+                {contactData.phones[1].label}
+              </a>
+            </p>
+            <p className="text-sm text-neutral-100">
+              Landline:{" "}
+              <a href={contactData.landline.href} className="hover:text-primary-500 transition-colors">
+                {contactData.landline.label}
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
+      </Item>
 
-      <div className="flex items-start gap-4">
-        <ContactIconCircle variant="solid">
-          <Mail className="w-5 h-5" />
-        </ContactIconCircle>
-        <div>
-          <h3 className="text-lg font-bold text-neutral-50">Email</h3>
-          <a
-            href={contactData.email.href}
-            className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
-          >
-            {contactData.email.label}
-          </a>
+      <Item {...itemProps}>
+        <div className="flex items-start gap-4">
+          <ContactIconCircle variant="solid">
+            <Mail className="w-5 h-5" />
+          </ContactIconCircle>
+          <div>
+            <h3 className="text-lg font-bold text-neutral-50">Email</h3>
+            <a
+              href={contactData.email.href}
+              className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
+            >
+              {contactData.email.label}
+            </a>
+          </div>
         </div>
-      </div>
+      </Item>
 
-      <div className="flex items-start gap-4">
-        <ContactIconCircle variant="solid">
-          <MapPin className="w-5 h-5" />
-        </ContactIconCircle>
-        <div>
-          <h3 className="text-lg font-bold text-neutral-50">Address</h3>
-          <a
-            href={contactData.address.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
-          >
-            {contactData.address.label}
-          </a>
+      <Item {...itemProps}>
+        <div className="flex items-start gap-4">
+          <ContactIconCircle variant="solid">
+            <MapPin className="w-5 h-5" />
+          </ContactIconCircle>
+          <div>
+            <h3 className="text-lg font-bold text-neutral-50">Address</h3>
+            <a
+              href={contactData.address.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-neutral-100 hover:text-primary-500 transition-colors mt-1 block"
+            >
+              {contactData.address.label}
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
+      </Item>
+    </Wrapper>
   )
 }
 
@@ -159,6 +201,28 @@ function ContactFormCard() {
   )
 }
 
+function AnimatedFormCard() {
+  const shouldReduceMotion = useReducedMotion()
+
+  if (shouldReduceMotion) {
+    return <ContactFormCard />
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{
+        opacity: { duration: 0.3 },
+        x: { ...springConfig, delay: 0.15 },
+      }}
+    >
+      <ContactFormCard />
+    </motion.div>
+  )
+}
+
 function ContactSection() {
   return (
     <section className="relative py-20">
@@ -173,7 +237,7 @@ function ContactSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <ContactInfo />
-          <ContactFormCard />
+          <AnimatedFormCard />
         </div>
       </div>
     </section>
