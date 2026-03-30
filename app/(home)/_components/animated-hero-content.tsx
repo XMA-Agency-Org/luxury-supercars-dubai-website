@@ -48,7 +48,7 @@ const HeroSlideshow = memo(function HeroSlideshow({ isMobile }: { isMobile: bool
         <motion.div
           key={slide.src}
           className="absolute inset-0"
-          initial={false}
+          initial={{ opacity: index === 0 ? 1 : 0, scale: 1 }}
           animate={{
             opacity: index === activeIndex ? 1 : 0,
             scale: index === activeIndex ? (shouldReduceMotion ? 1 : 1.08) : 1,
