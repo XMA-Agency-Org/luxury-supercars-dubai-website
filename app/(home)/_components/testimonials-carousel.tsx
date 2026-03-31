@@ -111,7 +111,7 @@ function TestimonialsCarousel({
       </div>
       <div
         ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+        className="flex gap-6 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-4"
       >
         {testimonials.map((testimonial) => (
           <TestimonialCard key={testimonial.name} testimonial={testimonial} />

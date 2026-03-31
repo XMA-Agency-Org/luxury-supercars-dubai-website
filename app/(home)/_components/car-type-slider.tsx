@@ -51,7 +51,7 @@ function CarTypeSlider({ carCategories }: CarTypeSliderProps) {
 
         <div
           ref={scrollContainerRef}
-          className="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:flex-wrap md:justify-center md:gap-16 md:overflow-visible md:snap-none md:pb-0"
+          className="flex gap-8 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-4 md:flex-wrap md:justify-center md:gap-16 md:overflow-visible md:snap-none md:pb-0"
         >
           {carCategories.map((category) => (
             <NextLink

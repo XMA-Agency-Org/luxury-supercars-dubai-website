@@ -117,7 +117,7 @@ export function CarCategorySection({
         <div className="relative mt-8 group/carousel" style={{ perspective: "1200px" }}>
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 py-2 px-2"
+            className="flex gap-6 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-4 py-2 px-2"
           >
             {scrollCars.map((car) => (
               <div
